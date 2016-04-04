@@ -8,6 +8,13 @@ subtitle: Data Types
 
 {% include toc.html %}
 
+# Ingesting Grib Files
+
+You can ingest entire Grib file archives from a tarball with a single command:
+
+    tar -xvzf ARCHIVE.tar.gz -C /awips2/edex/data/manual/
+
+or copy any inidividual file to `/awips2/edex/data/manual` and watch the appropriate log file (grib, radar, satellite, etc.) for the ingest message.
 
 ## Data distribution file
 

@@ -48,5 +48,3 @@ The Product Browser allows users to browse a complete data inventory in a side w
 ![image](../images/vPeaMsn9ZT.gif)
 
 
-
-

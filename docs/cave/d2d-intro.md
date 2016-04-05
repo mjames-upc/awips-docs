@@ -1,7 +1,7 @@
 ---
 layout: default
-title: D2D Introduction
-subtitle: CAVE User Guide
+title: Introduction
+subtitle: D2D User Guide
 ---
 
 # D2D Toolbar

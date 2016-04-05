@@ -1,9 +1,7 @@
 ---
 layout: default
-title: CAVE Keyboard Shortcuts
+title: Keyboard Shortcuts
 ---
-
-# D2D
 
 Action|Command
 ----------------|------------
@@ -18,9 +16,5 @@ Time options    | Ctrl+T
 Image combine   | Insert
 Loop properties | Ctrl+L
 Image properties| Ctrl+I
-
-# Proposed
-
-Action|Command
----------------|------------
-Export image   | Ctrl+E 
+Export image    | Ctrl+E 
+Exporrt KML     | Ctrl+K

@@ -1,8 +1,7 @@
 ---
 layout: default
 type: guide
-shortname: Docs
-title: Surface Menu
+title: Surface Obs
 subtitle: D2D User Guide
 ---
 

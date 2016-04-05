@@ -1,7 +1,8 @@
 ---
 layout: default
 type: guide
-title: D2D Grid Bundles
+title: Gridded Model Display
+subtitle: D2D User Guide
 ---
 
 {% include toc.html %}

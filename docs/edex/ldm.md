@@ -6,9 +6,6 @@ title: Default LDM feeds
 subtitle: EDEX Admin
 ---
 
-{% include toc.html %}
-
-
 `/awips2/ldm/etc/ldmd.conf` is the main configuration file for the LDM server, where the EDEX server and default feed types are defined.
 
 At the top of `ldmd.conf`, you can see the **EXEC** lines
@@ -18,7 +15,7 @@ At the top of `ldmd.conf`, you can see the **EXEC** lines
   
 where `EDEX_HOSTNAME` is set to your local EDEX server with the command `edex setup`.
 
-## Default feed types
+# Default feed types
 
 Remember than LDM commands such as these require **TAB SEPARATION** between items.
 
@@ -38,7 +35,7 @@ Remember than LDM commands such as these require **TAB SEPARATION** between item
     REQUEST CONDUIT ".(awip3d|0p50).[8]$"   idd.unidata.ucar.edu
     REQUEST CONDUIT ".(awip3d|0p50).[9]$"   idd.unidata.ucar.edu
 
-## Optional feed types
+# Optional feed types
 
 FNMOC and CMC models
 

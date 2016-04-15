@@ -53,7 +53,7 @@ In this case, if the data is not stored in HDF5, then Steps 3 and 4 are skipped.
 
 ### Data Retrieval Architecture
 
-Data retrieval is the process by which the CAVE client obtains data using the EDEX Request server; the Request server obtains the data from processed data storage (Postgres and HDF5) and returns it to CAVE.  The basic data retrieval process is shown in Figure 1.5.4-1.
+Data retrieval is the process by which the CAVE client obtains data using the EDEX Request server; the Request server obtains the data from processed data storage (Postgres and HDF5) and returns it to CAVE. 
 
 1. **CAVE** sends a request via TCP to the EDEX Request server.
 2. **EDEX Request** server obtains the requested metadata via Postgres and stored data via PyPIES.

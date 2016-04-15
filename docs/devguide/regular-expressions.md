@@ -28,24 +28,24 @@ AWIPS II uses regular expressions for data filtering at two steps in the ingest 
 
 Standard LDM regular expressions from **/awips2/ldm/etc/pqact.conf** 
 
-### Level 3 Radar (All)
+# Level 3 Radar (All)
 
     NEXRAD3 ^(SDUS[23578].) .... (......) /p(...)(...)
             FILE    -overwrite -close -edex /awips2/data_store/radar/\4/\3/\1_\4_\3_\2_(seq).rad
             
-### Level 3 Radar (Subset) 
+# Level 3 Radar (Subset) 
 
     NEXRAD3 ^(SDUS[23578].) .... (......) /p(DHR|DPR|DSP|DTA|DAA|DU3|DU6|DVL|EET|HHC|N3P|N0C|N0K|N0Q|N0S|N0U|N0X|N0Z|NCR|NMD|OHA)(...)
             FILE    -overwrite -close -edex /awips2/data_store/radar/\4/\3/\1_\4_\3_\2_(seq).rad
 
-### FNEXRAD Composites
+# FNEXRAD Composites
 
     FNEXRAD ^rad/NEXRCOMP/(...)/(...)_(........)_(....)
             PIPE    -close -edex -log
             pngg2gini -vl logs/pngg2gini.log
             /awips2/edex/data/manual/nexrcomp_\1_\4_\3_\2_(seq).rad
     
-### Satellite Imagery
+# Satellite Imagery
     
     # NOAAPORT GINI images
     NIMAGE  ^satz/ch[0-9]/.*/(.*)/([12][0-9])([0-9][0-9])([01][0-9])([0-3][0-9]) ([0-2][0-9])([0-5][0-9])/(.*)/(.*km)/
@@ -188,7 +188,7 @@ Standard LDM regular expressions from **/awips2/ldm/etc/pqact.conf**
             /awips2/edex/data/manual/uniwisc_SOUNDER_\3_FIRESSH_\4_\5
 
 
-### Gridded Model Data
+# Gridded Model Data
   
       # GFS 0.5 deg (gfs.tCCz.pgrb2.0p50.fFFF) all hours out to F384
       CONDUIT ^data/nccf/com/.*gfs.t[0-9][0-9]z.(pgrb2.0p50).*!(grib2)/[^/]*/(SSIGFS|GFS)/#([^/]*)/([0-9]{8})([0-9]{4})(F[0-9]..)/([^/]*)/.*! (......)

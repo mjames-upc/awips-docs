@@ -5,6 +5,8 @@ shortname: Docs
 title: Data distribution files
 subtitle: EDEX Admin
 ---
+
+{% include toc.html %}
     
 EDEX alerts the appropriate decoding plug-ins of new data by use of XML files that describe data based on regular expressions.  If the WMO header, or file name, matches a regular expression listed in a distribution XML, then EDEX will put a message into the QPID queue for the decoder which indicates that a piece of data is available. If a piece of data does not match any distribution XML, EDEX will:
 
@@ -71,12 +73,10 @@ The contents of the base version of the radar distribution file:
         <regex>^RadarServer.*</regex>
     </requestPatterns>
 
-Looking at the base radar.xml distribution file in the previous exhibit, there are two regular expressions.  The first regular expression matches the standard WMO ID of radar products.   As depicted in the following exhibit, via the edexBridge, LDM will place a message in the external.dropbox QPID queue, indicating a radar product has arrived.  EDEX will then take the message containing the radar WMO ID and compare it against the regular expressions in radar.xml.  If a match is found, EDEX places a message in the QPID queue Ingest.radar.  The radar decoder will then consume the message and process the radar data accordingly. 
-
-![image alt text](image_0.png)
+Looking at the base radar.xml distribution file in the previous example, there are two regular expressions.  The first regular expression matches the standard WMO ID of radar products.   Via the edexBridge the LDM will place a message in the external.dropbox QPID queue, indicating a radar product has arrived.  EDEX will then take the message containing the radar WMO ID and compare it against the regular expressions in radar.xml.  If a match is found, EDEX places a message in the QPID queue Ingest.radar.  The radar decoder will then consume the message and process the radar data accordingly. 
 
 
-### Adding a REGEX to the Satellite Data Distribution File
+# Adding a REGEX to the Satellite Data Distribution File
 
 As a quick example, suppose we have a local data source for satellite imagery that does not have a WMO header; also suppose that the data source writes to files whose names start with **LOCAL.sat**.
 
@@ -96,15 +96,15 @@ To add this locally produced satellite data file to the EDEX distribution; perfo
 
 Raw files are written to **/data_store**, and a message is sent via QPID to the EDEX distribution service from the LDM. When a regular expression match is found in a data distribution file, the raw data file is placed in a queue for the matching plugin to decode and process. The distribution files are used to match file headers as well as filenames, which is how files dropped into EDEXâ€™s manual endpoint (**/awips2/edex/data/manual**) are processed.
 
-### Editing an EDEX Data Distribution File
+# Editing an EDEX Data Distribution File
 
 Because these files are in the **edex_static/** directory, they have to be manually edited using a text editor. You should not edit the base files; rather, you should copy the base version to your site and then edit the site version. The regular expressions in the distribution files need to correspond with the regular expressions in the LDM **_pqact.conf_**** **file.
 
 If patterns exist in **_pqact.conf_** but are not in the distribution files, then raw data files will be written to **/data_store** but will not be ingested and processed by EDEX. Entries for these non-ingested files would be written to the unrecognized files log in **/awips/edex/logs**.
 
-## EDEX Data Distribution File Examples
+# EDEX Data Distribution File Examples
 
-### Surface Obs
+## Surface Obs
 
 **/awips2/edex/data/utility/edex_static/base/distribution/obs.xml** Processes any file header that starts with **SA** or **SP**, which should match any WMO header that contains METAR data (e.g.**SAUS**, **SPUS**, **SACN**, **SAMX**).
 
@@ -112,7 +112,7 @@ If patterns exist in **_pqact.conf_** but are not in the distribution files, the
       <regex>^S[AP].*</regex>
     </requestPatterns> 
 
-### Text Data
+## Text Data
 
 **/awips2/edex/data/utility/edex_static/base/distribution/text.xml** Processes lots of WM patterns. The second pattern ^S[A-CEG-Z].* matches any header that starts with **S** except for **SD**or **SF**, so it also matches the **SA** and **SP** files that the **obs.xml** plugin matches. This means that METARs are processed by both plugins simultaneously.
 
@@ -134,7 +134,7 @@ If patterns exist in **_pqact.conf_** but are not in the distribution files, the
       <regex>^F[EHIJKLMQVWX].*</regex> 
     </requestPatterns> 
 
-### Grib Data
+## Grib Data
 
 **/awips2/edex/data/utility/edex_static/base/distribution/grib.xml** The grib/grid decoder distribution file matches all numerical grids distributed over the IDD NGRID feed by matching WMO header, and from CONDUIT by matching the *.grib* file extension.
 

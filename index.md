@@ -16,14 +16,6 @@ shortname: Introducing
   }
 </style>
 
-AWIPS II is a weather forecasting display and analysis package being developed by the National Weather Service and Raytheon. AWIPS II is a Java application consisting of a data-rendering client (CAVE, which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server (EDEX, which runs only on Linux)
-
-AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system. At a high level, data flow describes the path taken by a piece of data from its source to its display by a client system. This path starts with data requested and stored by an [LDM](#ldm) client and includes the decoding of the data and storing of decoded data in a form readable and displayable by the end user.
-
-The AWIPS II ingest and request processes are a highly distributed system, and the messaging broken [Qpid](#qpid) is used for inter-process communication. 
-
-![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
-
 [ldm]: http://www.unidata.ucar.edu/software/ldm/
 [idd]: http://www.unidata.ucar.edu/projects/#idd
 [gempak]: http://www.unidata.ucar.edu/software/gempak/
@@ -38,6 +30,13 @@ The AWIPS II ingest and request processes are a highly distributed system, and t
 [hibernate]: http://www.hibernate.org/ 
 [qpid]: http://qpid.apache.org 
 
+AWIPS II is a weather forecasting and analysis package used by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [NCEP](https://vlab.ncep.noaa.gov/web/awips-technical-library).  UCAR's **[Unidata Program Center](http://www.unidata.ucar.edu/software/awips2/)** supports an open source version for the academic and research geoscience communities.  
+
+AWIPS II is a Java application consisting of a data display client ([CAVE](#cave), which runs on Red Hat/CentOS Linux and OS X) and a backend data server ([EDEX](#edex), which runs only on Linux)
+
+AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system, starting with an [LDM](#ldm) client requesting data from Unidata's [IDD](http://www.unidata.ucar.edu/projects/#idd).  These data are decoded into HDF5 and PostgreSQL/PostGIS metadata, and renderable with the [CAVE](#cave) client and the [Python Data Access Framework](https://github.com/Unidata/python-awips).
+
+![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
 
 ## Software Components
 
@@ -60,9 +59,13 @@ In addition to programs developed specifically for AWIPS, AWIPS II uses several 
 
 The main server for AWIPS II.  Qpid sends alerts to EDEX when data stored by the LDM is ready for processing.  These Qpid messages include file header information which allows EDEX to determine the appropriate data decoder to use.  The default ingest server (simply named ingest) handles all data ingest other than grib messages, which are processed by a separate ingestGrib server.  After decoding, EDEX writes metadata to the database via Postgres and saves the processed data in HDF5 via PyPIES.   A third EDEX server, request, feeds requested data to CAVE clients. EDEX ingest and request servers are started and stopped with the commands `edex start` and `edex stop`, which runs the system script `/etc/rc.d/init.d/edex_camel`
 
+* [Read More: How to Install EDEX](docs/install/install-edex.html)
+
 ### CAVE
 
 Common AWIPS Visualization Environment. The data rendering and visualization tool for AWIPS II. CAVE contains of a number of different data display configurations called perspectives.  Perspectives used in operational forecasting environments include **D2D** (Display Two-Dimensional), **GFE** (Graphical Forecast Editor), and **NCP** (National Centers Perspective). CAVE is started with the command `/awips2/cave/cave.sh` or `cave.sh`
+
+* [Read More: How to Install CAVE](docs/install/install-cave.html)
 
 ![CAVE](http://www.unidata.ucar.edu/software/awips2/images/Unidata_AWIPS2_CAVE.png)
 

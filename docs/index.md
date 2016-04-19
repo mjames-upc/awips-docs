@@ -16,14 +16,6 @@ shortname: Introducing
   }
 </style>
 
-AWIPS II is a weather forecasting display and analysis package being developed by the National Weather Service and Raytheon. AWIPS II is a Java application consisting of a data-rendering client (CAVE, which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server (EDEX, which runs only on Linux)
-
-AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system. At a high level, data flow describes the path taken by a piece of data from its source to its display by a client system. This path starts with data requested and stored by an [LDM](#ldm) client and includes the decoding of the data and storing of decoded data in a form readable and displayable by the end user.
-
-The AWIPS II ingest and request processes are a highly distributed system, and the messaging broken [Qpid](#qpid) is used for inter-process communication. 
-
-![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
-
 [ldm]: http://www.unidata.ucar.edu/software/ldm/
 [idd]: http://www.unidata.ucar.edu/projects/#idd
 [gempak]: http://www.unidata.ucar.edu/software/gempak/
@@ -38,6 +30,11 @@ The AWIPS II ingest and request processes are a highly distributed system, and t
 [hibernate]: http://www.hibernate.org/ 
 [qpid]: http://qpid.apache.org 
 
+AWIPS II is a weather forecasting display and analysis package being developed by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [Raytheon](http://www.raytheon.com/capabilities/products/awips/). AWIPS II is a Java application consisting of a data-rendering client ([CAVE](#cave), which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server ([EDEX](#edex), which runs only on Linux)
+
+AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system, starting with an [LDM](#ldm) client requesting data from Unidata's [IDD](http://www.unidata.ucar.edu/projects/#idd).  These data are decoded into HDF5 and PostgreSQL/PostGIS metadata, and renderable with the [CAVE](#cave) client and the [Python Data Access Framework](https://github.com/Unidata/python-awips).
+
+![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
 
 ## Software Components
 

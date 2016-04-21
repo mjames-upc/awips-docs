@@ -6,138 +6,106 @@ subtitle: NEXRAD WSR-88D Products
 shortname: Appendix
 ---
 
-
-|Prod ID |Lvls |Lyr |Resol |Range| Prod ID| Product Name| Format|
-|---- |:--: |:--:|:--:|:--:|:--:|:-----------:| -----:|
-|2|0|0|0|0|GSM|General Status Msg (GSM)|GSM |
-|3|0|0|0|0|PRR|Product Request Resp (PRR)|PRR|
-|6|0|0|0|0|AAP|Alert Adaptation Parms (AAP)|AAP|
-|8|0|0|0|0|PTL|Product List (PTL)|PTL |
-|9|0|0|0|0|AM|Alert Message (AM)|AM |
-|16|8|0|1|230|Z|Reflectivity (Z)|Radial |
-|17|8|0|2|460|Z|Reflectivity (Z)|Radial |
-|18|8|0|4|460|Z|Reflectivity (Z)|Radial |
-|19|16|0|1|230|Z|Reflectivity (Z)|Radial |
-|20|16|0|2|460|Z|Reflectivity (Z)|Radial |
-|21|16|0|4|460|Z|Reflectivity (Z)|Radial |
-|22|8|0|0.25|60|V|Velocity (V)|Radial |
-|23|8|0|0.5|115|V|Velocity (V)|Radial |
-|24|8|0|1|230|V|Velocity (V)|Radial |
-|25|16|0|0.25|60|V|Velocity (V)|Radial |
-|26|16|0|0.5|115|V|Velocity (V)|Radial |
-|27|16|0|1|230|V|Velocity (V)|Radial |
-|28|8|0|0.25|60|SW|Spectrum Width (SW)|Radial |
-|29|8|0|0.5|115|SW|Spectrum Width (SW)|Radial |
-|30|8|0|1|230|SW|Spectrum Width (SW)|Radial |
-|31|16|0|2|230|USP|User Select Precip (USP)|Radial |
-|32|256|0|1|115|DHR|Digital Hybrid Scan Refl (DHR)|Radial |
-|34|8|0|1|230|CFC|Clutter Filter Control (CFC)|Radial |
-|35|8|0|1|230|CZ|Composite Ref (CZ)|Raster |
-|36|8|0|4|460|CZ|Composite Ref (CZ)|Raster |
-|37|16|0|1|230|CZ|Composite Ref (CZ)|Raster |
-|38|16|0|4|460|CZ|Composite Ref (CZ)|Raster |
-|39|0|0|1|230|CZC|Composite Ref Contour (CZC)|Graphic |
-|40|0|0|4|460|CZC|Composite Ref Contour (CZC)|Graphic |
-|41|16|0|4|230|ET|Echo Tops (ET)|Raster |
-|42|0|0|4|230|ETC|Echo Tops Contour (ETC)|Graphic |
-|43|16|0|1|230|SWR|Svr Wx Anal - Ref (SWR)|Radial |
-|44|16|0|0.25|230|SWV|Svr Wx Anal - Vel (SWV)|Radial |
-|45|8|0|0.25|230|SWW|Svr Wx Anal - SW (SWW)|Radial |
-|46|16|0|0.5|230|SWS|Svr Wx Anal - Shear (SWS)|Radial |
-|47|0|0|4|230|SWP|Severe Wx Prob (SWP)|Graphic |
-|48|8|0|0|0|VWP|VAD Wind Profile (VWP)|Graphic |
-|49|16|0|0|26|CM|Combined Moment (CM)|Raster |
-|50|16|0|1|230|RCS|Ref X-Sect (RCS)|Raster |
-|51|16|0|0.5|230|VCS|Vel X-Sect (VCS)|Raster |
-|52|8|0|0.5|230|SCS|SW X-Sect (SCS)|Raster |
-|53|8|0|1|50|WER|Wk Echo Region (WER)|Raster |
-|55|16|0|0.5|230|SRR|Storm Rel Vel Region (SRR)|Radial |
-|56|16|0|1|230|SRM|Storm Rel Velocity (SRM)|Radial |
-|57|16|0|4|230|VIL|Vert Integ Liq (VIL)|Raster |
-|58|0|0|0|345|STI|Storm Track (STI)|Graphic |
-|59|0|0|0|230|HI|Hail Index (HI)|Graphic |
-|60|0|0|0|230|M|Mesocyclone (M)|Graphic |
-|61|0|0|0|230|TVS|Tornadic Vortex Sig (TVS)|Graphic |
-|62|0|0|0|460|SS|Storm Structure (SS)|Text |
-|65|8|1|4|460|LRM|Lyr 1 Comp Ref Max (LRM)|Raster |
-|66|8|2|4|460|LRM|Lyr 2 Comp Ref Max (LRM)|Raster |
-|67|8|2|4|460|APR|Lyr 1 Comp Ref MAX (APR)|Raster |
-|73|0|0|0|0|UAM|User Alert Message (UAM)| Text |
-|74|0|0|0|460|RCM|Radar Coded Message (RCM)|Text |
-|75|0|0|0|0|FTM|Free Text Message (FTM)|Text |
-|77|0|0|0|0|PTM|PUP Text Message (PTM)|Text |
-|78|16|0|2|230|OHP|One Hour Precip (OHP)|Radial |
-|79|16|0|2|230|THP|Three Hour Precip (THP)|Radial |
-|80|16|0|2|230|STP|Storm Total Precip (STP)|Radial |
-|81|256|0|4|230|DPA|Digital Precip Array (DPA)|Raster |
-|82|8|0|40|230|SPD|Supplemental Precip Data (SPD)|Text |
-|83|0|0|0|0|IRM|Intermediate Radar Message (IRM)|Text |
-|84|8|0|0|0|VAD|Vel Az Display (VAD)|Graphic |
-|85|8|0|1|230|RCS|Ref X-Sect (RCS)|Raster |
-|86|8|0|0.5|230|VCS|Vel X-Sect (VCS)|Raster |
-|87|0|0|2|0|CS|Combined Shear (CS)|Raster |
-|88|0|0|2|0|CSC|Combined Shear Contour (CSC)|Graphic |
-|89|8|3|4|460|LRA|Lyr 3 Comp Ref Avg (LRA)|Raster |
-|90|8|3|4|460|LRM|Lyr 3 Comp Ref Max (LRM)|Raster |
-|93|256|0|1.00|115|DBV|ITWS Digital Velocity (DBV)|Radial |
-|94|256|0|1.00|460|DZ|8-bit Refl Array (DZ)|Radial |
-|99|256|0|0.25|230|V|8-bit Velocity Array (V)|Radial |
-|100|0|0|0|0|VSDT|VAD Site Adapt Params (VSDT)|Text |
-|101|0|0|0|0|STIT|Storm Track Alpha block (STIT)|Text |
-|102|0|0|0|0|HIT|Hail Index Alpha block (HIT)|Text |
-|103|0|0|0|0|MT|Mesocyclone Alpha block (MT)|Text |
-|104|0|0|0|0|TVST|TVS Alpha block (TVST)|Text |
-|105|0|0|0|0|CST|Combined Shear Params (CST)|Text |
-|106|0|0|0|0|CSCT|Combined Shr Cntr Parms (CSCT)|Text |
-|107|0|0|0|0|OHPT|1hr Rainfall Params (OHPT)|Text |
-|108|0|0|0|0|THPT|3hr Rainfall Params (THPT)|Text |
-|109|0|0|0|0|STPT|Storm Total Params (STPT)|Text |
-|136|16|0|4|0|CZFMP|Comp Refl Mos Filt Prec(CZFMP)|Raster |
-|137|16|0|8|0|CZFMP|Comp Refl Mos Filt Prec(CZFMP)|Raster |
-|139|16|0|4|0|CZM|Composite Refl Mosaic (CZM)|Raster |
-|144|16|0|8|0|CZM|Composite Refl Mosaic (CZM)|Raster |
-|153|256|0|0.25|460|HZ|Super-Res Reflectivity (Z)|Radial |
-|154|256|0|0.25|300|HV|Super-Res Velocity (V)|Radial |
-|155|256|0|0.25|300|HSW|Super-Res Spec Width (SW)|Radial |
-|159|8|0|4|300|ZDR|Differential Refl (ZDR)|Raster |
-|158|16|0|0.25|300|ZDR|Differential Refl (ZDR)|Raster |
-|161|256|0|0.25|300|CC|Correlation Coeff (CC)|Radial |
-|160|16|0|1.0|230|CC|Correlation Coeff (CC)|Radial |
-|163|256|0|0.25|300|KDP|Specific Diff Phase (KDP)|Radial |
-|162|16|0|1.0|230|KDP|Specific Diff Phase (KDP)|Radial |
-|165|256|0|0.25|300|HC|Hydrometer Class (HC)|Radial |
-|164|16|0|1.0|230|HC|Hydrometer Class (HC)|Radial |
-|177|256|0|0.25|230|HHC|Hybrid Hydrometer Class (HHC)|Radial |
-|176|65536|0|0.25|230|DPR|Digital Inst Precip rate (DPR)|Radial |
-|169|16|0|2.0|230|OHA|One Hour Accum (STA)|Radial |
-|171|16|0|2.0|230|STA|Storm Total Accum (STA)|Radial |
-|172|256|0|0.25|230|STA|Storm Total Accum (DSA)|Radial |
-|173|256|0|0.25|230|DUA|User Select Accum (DUA)|Radial |
-|174|256|0|0.25|230|DOD|One Hour Diff (DOD)|Radial |
-|175|256|0|0.25|230|DSD|Storm Total Diff (DSD)|Radial |
-||256|0|0.25|230|DP|Differential Phase (DP)|Radial |
-||256|0|0.25|230|PRE|Inst Precip Rate (PRE)|Radial |
-|166|0|0|0.0|230|ML|Melting Layer (ML)|Graphic |
-|170|256|0|0.25|230|DAA|One Hour Unbiased Accum (DAA)|Radial |
-|199|16|0|4|0|OHPM|One Hour Precip Mosaic (OHPM)|Raster |
-|200|16|0|8|0|OHPM|One Hour Precip Mosaic (OHPM)|Raster |
-|204|16|0|4|0|ETM|Echo Tops Mosaic (ETM)|Raster |
-|205|16|0|8|0|ETM|Echo Tops Mosaic (ETM)|Raster |
-|208|0|0|0|0|CSAM9|Com Storms Att Mosaic B9 (CSAM9)|Raster |
-|209|0|0|0|0|CSAM|Comb Storms Att Mosaic (CSAM)|Raster |
-|210|16|0|4|0|CPAM|Cum Precip Accum Mosaic (CPAM)|Raster |
-|211|16|0|4|0|ODPM|24-Hr Precip Mosaic (ODPM)|Raster |
-|212|16|0|4|0|CZMP|Comp Refl Mosaic Precip (CZMP)|Raster |
-|213|16|0|8|0|CZMP|Comp Refl Mosaic Precip (CZMP)|Raster |
-|216|16|0|8|0|CPAM|Cum Precip Accum Mosaic (CPAM)|Raster |
-|217|16|0|8|0|ODPM|24-Hr Precip Mosaic (ODPM)|Raster |
-|246|16|0|2|0|ZNM|Refl Mos Non Filt (ZNM)|Raster |
-|247|16|0|2|0|ZNMC|Refl Mos Non Filt Clr (ZNMC)|Raster |
-|249|16|0|2|0|ZM|Base Reflectivity Mosaic (ZM)|Raster |
-|250|16|0|4|0|ZM|Base Reflectivity Mosaic (ZM)|Raster |
-|251|16|0|8|0|ZM|Base Reflectivity Mosaic (ZM)|Raster |
-|253|16|0|4|0|ZMGA|Base Refl Mos Griff+Alb (ZMGA)|Raster |
-|254|8|0|4|0|LRMM|Layer Comp Refl Low Mos (VILM)|Raster |
-|255|8|0|8|0|LRMM|Layer Comp Refl Med Mos (VILM)|Raster |
-|256|8|0|8|0|LRMM|Layer Comp Refl High Mos (VILM)|Raster |
-|257|16|0|4|0|VILM|Vert Int Liquid Mosaic (VILM)|Raster |
+| Product Name  | Mnemonic  | ID  | Levels  | Res | Elevation |
+| -------------  |:--:|:--:|:--:|:-----:|:---:|
+| Reflectivity (Z) |  Z | 19 | 16 |  100  |  .5  | 
+| Reflectivity (Z) |  Z | 19 | 16 |  100  | 1.5  | 
+| Reflectivity (Z) |  Z | 19 | 16 |  100  | 2.5  | 
+| Reflectivity (Z) |  Z | 19 | 16 |  100  | 3.5  | 
+| Reflectivity (Z) |  Z | 20 | 16 |  200  |  .5  | 
+| Velocity (V) |  V | 27 | 16 |  100  |  .5  | 
+| Velocity (V) |  V | 27 | 16 |  100  | 1.5  | 
+| Velocity (V) |  V | 27 | 16 |  100  | 2.5  | 
+| Velocity (V) |  V | 27 | 16 |  100  | 3.5  | 
+| Storm Rel Velocity (SRM) |  SRM | 56 | 16 |  100  |  .5  | 
+| Storm Rel Velocity (SRM) |  SRM | 56 | 16 |  100  | 1.5  | 
+| Storm Rel Velocity (SRM) |  SRM | 56 | 16 |  100  | 2.5  | 
+| Storm Rel Velocity (SRM) |  SRM | 56 | 16 |  100  | 3.5  | 
+| Composite Ref (CZ) |  CZ |  37 | 16 |  100  | -1  | 
+| Composite Ref (CZ) |  CZ |  38 | 16 |  400  | -1  | 
+| Lyr Comp Ref Max (LRM) Level 1 |  LRM | 65 |  8 |  0  | -1  | 
+| Lyr Comp Ref Max (LRM) Level 2 |  LRM | 66 |  8 |  0  | -1  | 
+| Lyr Comp Ref Max (LRM) Level 3 |  LRM | 90 |  8 |  0  | -1  | 
+| Lyr Comp Ref MAX (APR) |  APR | 67 | 16 |  0  | -1  | 
+| Echo Tops (ET) |  ET |  41 | 16 |  0  | -1  | 
+| Vert Integ Liq (VIL) |  VIL | 57 | 16 |  0  | -1  | 
+| One Hour Precip (OHP) | OHP | 78 | 16 |  0  | -1  | 
+| Storm Total Precip (STP) |  STP | 80 | 16 |  0  | -1  | 
+| VAD Wind Profile (VWP) |  VWP | 48 |  0 |  0  | -1  | 
+| Digital Precip Array (DPA) |  DPA | 81 | 256 |  400  | -1  | 
+| Velocity (V) |  V | 25 | 16 |  100  |  .5  | 
+| Base Spectrum Width (SW) |  SW |  28 |  8 |  100  |  .5  | 
+| Base Spectrum Width (SW) |  SW |  30 |  8 |  100  |  .5  | 
+| Severe Weather Probablilty (SWP) |  SWP | 47 |  0 |  100  | -1  | 
+| Storm Tracking Information (STI) |  STI | 58 |  0 |  100  | -1  | 
+| Hail Index (HI) | HI |  59 |  0 |  100  | -1  | 
+| Mesocyclone (M) | M | 60 |  0 |  100  | -1  | 
+| Mesocyclone (MD) |  MD | 141 |  0 |  0  |  1  | 
+| Tornadic Vortex Signature (TVS) | TVS | 61 |  0 |  100  | -1  | 
+| Storm Structure (SS) |  SS |  62 |  0 |  100  | -1  | 
+| Supplemental Precipitation Data (SPD) | SPD | 82 |  0 |  100  | -1  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  .5  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 1.5  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 2.4  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 3.4  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 4.3  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 5.3  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 6.2  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 7.5  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  | 8.7  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  10.0  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  12.0  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  14.0  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  16.7  | 
+| Reflectivity (Z) |  Z | 94 | 256 |  100  |  19.5  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  .5  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 1.5  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 2.4  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 3.4  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 4.3  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 5.3  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 6.2  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 7.5  | 
+| Velocity (V) |  V | 99 | 256 | 25  | 8.7  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  10.0  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  12.0  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  14.0  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  16.7  | 
+| Velocity (V) |  V | 99 | 256 | 25  |  195  | 
+| Super Res Reflectivity (Z) |  HZ | 153 | 256 | 25  |  .5  | 
+| Super Res Reflectivity (Z) |  HZ | 153 | 256 | 25  | 1.5  | 
+| Super Res Velocity (V) |  HV | 154 | 256 | 25  |  .5  | 
+| Super Res Velocity (V) |  HV | 154 | 256 | 25  | 1.5  | 
+| Super Res Spec Width (SW) | HSW | 155 | 256 | 25  |  .5  | 
+| Super Res Spec Width (SW) | HSW | 155 | 256 | 25  | 1.5  | 
+| Spectrum Width (SW) | SW |  30 |  8 |  100  | 1.5  | 
+| Spectrum Width (SW) | SW |  28 |  8 | 25  | 1.5  | 
+| Digital Vert Integ Liq (DVL) |  DVL | 134 | 256 |  100  | -1  | 
+| Digital Hybrid Scan Refl (DHR) |  DHR | 32 | 256 |  100  | -1  | 
+| Enhanced Echo Tops (EET) |  EET | 135 | 256 |  100  | -1  | 
+| Digital Meso Detection (DMD) |  DMD | 149 |  0 |  0 | 16384  | 
+| TVS Rapid Update (TRU) |  TRU | 143 |  0 |  0 | 16384  | 
+| User Selectable Lyr Refl (ULR) |  ULR | 137 | 16 |  100  | -1  | 
+| Storm Total Precip (STP) |  STP | 138 | 256 |  200  | -1  | 
+| 1-Hour Snow-Water Equiv (OSW) | OSW | 144 | 16 |  100  | -1  | 
+| 1-Hour Snow Depth (OSD) | OSD | 145 | 16 |  100  | -1  | 
+| Storm Tot Snow Depth (SSD) |  SSD | 147 | 16 |  100  | -1  | 
+| Storm Tot Snow-Water Equiv (SSW) |  SSW | 146 | 16 |  100  | -1  | 
+| Differential Refl (ZDR) | ZDR | 158 | 16 |  100  |  .5  | 
+| Differential Refl (ZDR) | ZDR | 159 | 256 | 25 | 16384  | 
+| Correlation Coeff (CC) |  CC | 160 | 16 |  100  |  .5  | 
+| Correlation Coeff (CC) |  CC | 161 | 256 | 25 | 16384  | 
+| Specific Diff Phase (KDP) | KDP | 162 | 16 |  100  |  .5  | 
+| Specific Diff Phase (KDP) | KDP | 163 | 256 | 25 | 16384  | 
+| Hydrometeor Class (HC) |  HC | 164 | 16 |  100  |  .5  | 
+| Hydrometeor Class (HC) |  HC | 165 | 256 | 25 | 16384  | 
+| Melting Layer (ML) |  ML | 166 |  0 |  0 | 16384  | 
+| Hybrid Hydrometeor Class (HHC) |  HHC | 177 | 256 | 25  | -1  | 
+| Digital Inst Precip Rate (DPR) |  DPR | 176 |  0 | 25  | -1  | 
+| One Hour Accum (OHA) |  OHA | 169 | 16 |  200  | -1  | 
+| User Select Accum (DUA) | DUA | 173 | 256 | 25  | -1  | 
+| User Select Accum (DUA) | DUA | 173 | 256 | 25  | -1  | 
+| Storm Total Accum (STA) | STA | 171 | 16 |  200  | -1  | 
+| Storm Total Accum (DSA) | STA | 172 | 256 | 25  | -1  | 
+| One Hour Diff (DOD) | DOD | 174 | 256 | 25  | -1  | 
+| Storm Total Diff (DSD) |  DSD | 175 | 256 | 25  | -1  | 

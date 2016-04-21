@@ -6,6 +6,10 @@ title: Install EDEX
 subtitle: Install & Config
 ---
 
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installEDEX.sh)
+
+<br>
+
 # Linux Download
 
 For 64-bit RHEL/CentOS 5 and 6, download and run the script [installEDEX.sh](http://www.unidata.ucar.edu/software/awips2/installEDEX.sh):

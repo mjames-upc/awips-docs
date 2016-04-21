@@ -3,11 +3,15 @@ title: Download and Install CAVE
 layout: default
 ---
 
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>Mac OS X</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh)
+
+<br>
 
 # OS X client
 
-Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg) (263 MB)
+Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg) (263 MB), click to open and drag to your Applications folder.  The application will write to a local data cache directory `~/Library/CAVE`.
 
+<br>
 
 # Linux client
 
@@ -19,7 +23,14 @@ Download and run the script [installCAVE.sh](http://www.unidata.ucar.edu/softwar
 
 This will install to `/awips2/cave` and `/awips2/alertviz` (as well as awips2 system directories like `/awips2/java` and `/awips2/python`).
 
-# How to run CAVE
+
+## Requirements
+
+* OpenGL 2.0
+* [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card.
+
+
+## How to run CAVE
 
     /awips2/cave/cave.sh
 
@@ -32,3 +43,11 @@ Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cl
 ![EDEX in the cloud](../images/boEbFSf28t.gif)
 
 
+# Troubleshooting
+
+## ~/caveData
+You can always reset CAVE by manually removing the `~caveData` directory (on OS X remove `~/Library/CAVE`.  Then run `/awips2/cave/cave.sh` again and you will be prompted to connect to an EDEX server again.  Your local files have been removed, but if user and workstation-specific files exist on the EDEX server (meaning you are re-connecting to one you have used before), the remote files will sync again to `~/caveData` or `~/Library/CAVE` (custom colormaps, bundles, etc.). So even if you delete your local sync, you can retrieve any saved bundles from EDEX just by connecting again and selecting the files from the **File > Import** menu.
+
+## No Images Displayed
+
+If you are able to load wire-frame contours but not images, [update your video driver](http://www.nvidia.com/Download/index.aspx?lang=en-us). 

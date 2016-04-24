@@ -3,13 +3,21 @@ title: Download and Install CAVE
 layout: default
 ---
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>Mac OS X</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh)
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>Mac OS X</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>32-bit Windows</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Windows</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
 
 <br>
 
 # OS X client
 
 Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg) (263 MB), click to open and drag to your Applications folder.  The application will write to a local data cache directory `~/Library/CAVE`.
+
+<br>
+
+# Windows client
+
+32-bit [awips-cave.msi](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi)
+
+64-bit [awips-cave.amd64.msi](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
 
 <br>
 
@@ -28,7 +36,8 @@ This will install to `/awips2/cave` and `/awips2/alertviz` (as well as awips2 sy
 
 * OpenGL 2.0
 * [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card.
-
+* 1.5GB disk space (you should be prepared for more with caching datasets in `~/caveData`)
+* All package dependencies should be resolved by yum.  Packages such as libXp, libXt, and openmotif will be picked up and installed along with CAVE. 
 
 ## How to run CAVE
 

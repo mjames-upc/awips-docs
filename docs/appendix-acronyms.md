@@ -8,6 +8,7 @@ shortname: Appendix
 
 ## A
 
+* ACARS - Aircraft Communications Addressing and Reporting System
 * AEV - AFOS-Era Verification
 * AFOS - Automation of Field Operations and Services
 * AGL - above ground level

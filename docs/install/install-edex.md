@@ -10,22 +10,7 @@ subtitle: Install & Config
 
 <br>
 
-# Linux Download
-
-For 64-bit RHEL/CentOS 5 and 6, download and run the script [installEDEX.sh](http://www.unidata.ucar.edu/software/awips2/installEDEX.sh):
-
-    wget http://www.unidata.ucar.edu/software/awips2/installEDEX.sh
-    chmod 755 ./installEDEX.sh
-    ./installEDEX.sh
-
-This will install to `/awips2/edex`, `/awips2/data` and other directories.
-
-> CentOS/RHEL 5 and 6 are the only supported operating systems for EDEX (Though you may have luck with Fedora Core 12 to 14 and Scientific Linux). Not supported for EDEX: Debian, Ubuntu, SUSE, Solaris, OS X, Fedora 15+, CentOS/RHEL 7, Windows
-
-selinux should be **disabled** [(read more about selinux at redhat.com)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux.html)
-    
-
-# EDEX Config
+# CentOS 6 Setup
 
 1. create user `awips` and group `fxalpha` and create AWIPS II directories
 
@@ -50,6 +35,26 @@ selinux should be **disabled** [(read more about selinux at redhat.com)](https:/
         -A INPUT -p tcp -m tcp --dport 5672 -j ACCEPT
         -A INPUT -p tcp -m tcp --dport 9581 -j ACCEPT
         -A INPUT -p tcp -m tcp --dport 9582 -j ACCEPT
+
+4. Mount SSD to /awips2/edex/data (optional)
+
+For better performance and to increase the decoding capacity of your EDEX server, mount an SSD to `/awips2/edex/data` (or to the entire `/awips2` folder if your SSD is larger than 500GB).
+
+# Linux Download
+
+For 64-bit RHEL/CentOS 5 and 6, download and run the script [installEDEX.sh](http://www.unidata.ucar.edu/software/awips2/installEDEX.sh):
+
+    wget http://www.unidata.ucar.edu/software/awips2/installEDEX.sh
+    chmod 755 ./installEDEX.sh
+    ./installEDEX.sh
+
+This will install to `/awips2/edex`, `/awips2/data` and other directories.
+
+> CentOS/RHEL 5 and 6 are the only supported operating systems for EDEX (Though you may have luck with Fedora Core 12 to 14 and Scientific Linux). Not supported for EDEX: Debian, Ubuntu, SUSE, Solaris, OS X, Fedora 15+, CentOS/RHEL 7, Windows
+
+selinux should be **disabled** [(read more about selinux at redhat.com)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux.html)
+    
+
 
 
 # What does installEDEX.sh do?

@@ -2,13 +2,15 @@
 layout: default
 type: guide
 shortname: Docs
-title: Upper Air Menu
+title: D2D Upper Air Data
 subtitle: D2D User Guide
 ---
 
+The Upper Air dropdown menu provides access to upper air plots, profiler data, radar plan-view and perspective displays of winds, and aircraft and rawinsonde data. Nearby Radiosonde Observations (RAOB) are also included on the menu to provide easy viewing of upper air data.
+
+
 {% include toc.html %}
 
-The Upper Air dropdown menu provides access to upper air plots, profiler data, radar plan-view and perspective displays of winds, and aircraft and rawinsonde data. Nearby Radiosonde Observations (RAOB) are also included on the menu to provide easy viewing of upper air data.
 
 # NUCAPS Soundings
 

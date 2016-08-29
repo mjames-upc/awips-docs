@@ -5,7 +5,11 @@ title: Unidata AWIPS II
 subtitle: EDEX Data Plugins
 ---
 
+<style>
+td:first-child { font-weight: bold }
+</style>
 # EDEX Data Decoder Plugins
+
 |  NAME  |  DESCRIPTION  |
 |:-------|:--------------|
 |  acars  |  Aircraft Communications Addressing and Reporting System observations  |
@@ -109,25 +113,3 @@ subtitle: EDEX Data Plugins
 |  vil  |  Cell-based Vertically Integrated Liquid from SCAN (System for Convection Analysis and Nowcasting)   |
 |  warning  |  Watches, Warnings, and Advisories   |
 |  wcp  |  SPC Convective Watches  |
-
-
-# EDEX DataAccess Plugins
-
-EDEX plugins which provide access to datasets via the Data Access Framework (including the python-awips client):
-
-| Data Type        | Plugin Name      |
-|:-----------------|:-----------------|
-| ACARS            | acars-dataaccess |
-| AIREPs           | airep-dataaccess |
-| Lightning        | binlightning-dataaccess |
-| BUFR MOS         | bufrmos-dataaccess |
-| BURF UA          | bufrua-dataaccess |
-| Climate DB       | climate-dataaccess |
-| LDAD mesonet     | ldadmesonet-dataaccess |
-| Model Soundings  | modelsounding-dataaccess |
-| METAR            | obs-dataaccess |
-| PIREPs           | pirep-dataaccess |
-| Wine Profiler    | profiler-dataaccess |
-| Synop/Marine Obs | sfcobs-dataaccess |
-| Warnings         | warning-dataaccess |
-

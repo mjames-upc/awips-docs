@@ -9,13 +9,15 @@ subtitle: Data Types
 {% include toc.html %}
 
 
-### Satellite Imagery
+# Satellite Imagery
     
-    # NOAAPORT GINI images
+## NOAAport GINI Images
+
     NIMAGE  ^satz/ch[0-9]/.*/(.*)/([12][0-9])([0-9][0-9])([01][0-9])([0-3][0-9]) ([0-2][0-9])([0-5][0-9])/(.*)/(.*km)/
             FILE    -close -overwrite -edex /awips2/data_store/sat/\8/\9/\1_\2\3\4\5_\6\7
     
-    # -------- GOES-East/West Northern Hemisphere Composites --------
+## UNIWISC GOES-East/West Northern Hemisphere Composites 
+
     # GOES-East/West VIS composites
     UNIWISC ^pnga2area Q. (CV) (.*) (.*) (.*) (.*) (........) (....)
             PIPE    -close -log
@@ -41,7 +43,9 @@ subtitle: Data Types
             PIPE    -close -log
             pnga2area -vl logs/pnga2area.log
             /awips2/edex/data/manual/uniwisc_GEWCOMP_\5_13.3_13.3_\6_\7
-    # ------------------- SSEC Global Composites -------------------
+            
+## 20km Rectilinear Global Composites 
+
     # Global WV composite
     UNIWISC ^pnga2area Q. (GW) (.*) (.*) (.*) (.*) (........) (....)
             PIPE    -close -log
@@ -52,7 +56,9 @@ subtitle: Data Types
             PIPE    -close -log
             pnga2area -vl logs/pnga2area.log
             /awips2/edex/data/manual/uniwisc_GLOBAL_\5_IR_IRCOMP_\6_\7
-    # ----------------- Mollweide Global Composites -----------------
+            
+## 30km Mollweide Global Composites 
+
     # Mollweide Global Water Vapor
     UNIWISC ^pnga2area Q. (UY) (.*) (.*)_IMG (.*)um (.*) (........) (....)
             PIPE    -close -log
@@ -84,11 +90,16 @@ subtitle: Data Types
             PIPE    -close -log
             pnga2area -vl logs/pnga2area.log
             /awips2/edex/data/manual/uniwisc_\1_\3_\5_\4_\6_\7
-    # Arctic
+            
+## Arctic Composite Imagery
+
     UNIWISC ^pnga2area Q. (U[LNGHO]) (.*) (.*) (.*)um (.*) (........) (....)
             PIPE    -close -log
             pnga2area -vl logs/pnga2area.log
             /awips2/edex/data/manual/uniwisc_ARCTIC_4km_\4_\6_\7
+
+## Antarctic Composite Imagery
+
     # Antarctic VIS Composite
     UNIWISC ^pnga2area Q. (UJ) (.*) (.*)_IMG (.*) (.*) (........) (....)
             PIPE    -close -log
@@ -109,7 +120,9 @@ subtitle: Data Types
             PIPE    -close -log
             pnga2area -vl logs/pnga2area.log
             /awips2/edex/data/manual/uniwisc_ANTARCTIC_4km_IR_\3_\4_\6_\7
-    # GOES Sounder Derived Image Products from University of Wisconsin CIMSS
+            
+## GOES Sounder Derived Imagery
+
     # CIMSS CAPE - McIDAS product code CE
     UNIWISC ^pnga2area Q0 CE .... (.*) (.*) (.*) (........) (....)
             PIPE    -close -log

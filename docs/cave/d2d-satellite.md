@@ -2,7 +2,7 @@
 layout: default
 type: guide
 shortname: Docs
-title: Satellite Menu
+title: Satellite Imagery
 subtitle: D2D User Guide
 ---
 

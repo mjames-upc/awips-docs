@@ -34,13 +34,13 @@ Create a new map projection.
 
 **File > Save Bundle**
 
-Save a product display within the AWIPS II system, synching the bundle between CAVE and the EDEX server.
+Save a product display within the AWIPS system, synching the bundle between CAVE and the EDEX server.
 
 ![image](../images/xl53gG4.png)
 
 **File > Load Bundle**
 
-Load a previously-saved bundle from within the AWIPS II system.
+Load a previously-saved bundle from within the AWIPS system.
 
 ![image](../images/VWiGMHp.png)
 

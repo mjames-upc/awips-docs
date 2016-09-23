@@ -1,88 +1,80 @@
 ---
 layout: default
 type: guide
-title: D2D Default Models
+shortname: Docs
+title: Volume Browser
+subtitle: D2D User Guide
 ---
 
-{% include toc.html %}
+The Volume Browser provides access to numerical models, other gridded data, and selected point data sources, such as RAOB, METAR, and Profiler. Through the Browser interface, you can choose the data source(s), field(s), plane(s), and point(s), and generate a customized list of model graphics or images for display.
 
-# CMC
+The Volume Browser window is divided into four areas:
 
-![](../images/)
+* The Menu Bar along the top
+* The Data Selection Menus
+* The Product Selection List
+* The Load Buttons (Diff and Load) to load items from the Product Selection List
 
-# DGEX
+Each area is then subdivided into menu components. The menu bar along the top of the Volume Browser window has dropdown lists that contain options for controlling all the various menu choices of the Volume Browser.
 
-![](../images/)
+# Volume Browser Menu Bar
 
-# ECMWF
+The dropdown menus in the Volume Browser menu bar contain options for controlling and manipulating the Volume Browser or the products chosen through the Volume Browser
 
-![](../images/)
+* File
+    * Clone
+    * Exit
+* Edit
+    * Clear All
+    * Clear Sources
+    * Clear Fields
+    * Clear Panes
+    * Select None
+    * Select All
+    * Find (Ctrl+F)
+    
+# VB Tools
 
-# GFS Global 0.5 degree
-          
-![](../images/)
+>## Baselines
 
-# GFS 40km (GFS212)
-       
-![](../images/)
 
-# HRRR
-           
-![](../images/)
+>## Points
 
-# NamDNG 2.5km
-         
-![](../images/)
+>## Choose by ID
 
-# NAM 12km
+# Display Types
 
-![](../images/)
+>## Plan View (default)
 
-# NAM 40km
+The default option for the Volume Browser. From the Plan-view perspective, data are plotted onto horizontal surfaces. The Plan view Planes are discussed in the planes section that follows. The additional options menu that appears in the Volume Browser menu bar allows you to choose whether you want the Plan view data to Animate in Time or Animate in Space.
 
-![](../images/)
+>## Cross Section
 
-# NAVGEM
-         
-![](../images/)
+Allows you to view gridded data as vertical slices along specific baselines. You need to use either the Interactive Baseline Tool or the predefined latitude/longitude baselines to specify the slice you wish to see. One of the additional options menus that appear in the Volume Browser menu bar allows you to choose whether you want the cross-section data to animate in time or space, while the other options menu allows you to adjust the vertical resolution. Descriptions of these options follows. (Note that the Fields and Planes submenu labels have changed after selecting "Cross section.") 
 
-# RAP 13km
-      
-![](../images/)
+>## Time Height
 
-# RAP 40km
-                    
-![](../images/)
+Used in conjunction with the Interactive Points Tool to enable you to view a time height cross section of a full run of gridded model data for a specific location. Additional options menus in the Volume Browser menu bar allow you to choose the direction in which you want the data to be plotted, and to adjust the vertical resolution. 
 
-# UKMET
-        
-![](../images/)
+>## Var vs Hgt
 
-# RTMA 2.5km
-        
-![](../images/)
+Enables you to view a profile of a meteorological model field as it changes through height, which is displayed in millibars. By using the Interactive Points Tool, you can select one or more locations from which to plot the data.
 
-# URMA 2.5km
 
-![](../images/)
+>## Sounding
 
-# FNMOC Wave Watch 3
+Works in conjunction with the Interactive Points Tool to enable you to generate a Skew-T chart for a specific location, no additional menus appear in the Volume Browser when the Soundings setting is chosen.
 
-![](../images/)
+>## Time Series
 
-# NOAA Wave Watch 3
+Used in conjunction with the Interactive Points Tool to enable you to plot gridded data on a time versus data value graph for a specified point.
 
-![](../images/)
+# Animation Types
 
-# Global Wave Watch 3
+>## Time
 
-![](../images/)
+The default option for the Volume Browser. It allows you to view model data through time
 
-# ESTOFS
+>## Space
 
-![](../images/)
-
-# ETSS Storm Surge
-
-![](../images/)
-
+Allows you to loop through a series of predefined latitude or longitude cross-sectional slices at a fixed time.

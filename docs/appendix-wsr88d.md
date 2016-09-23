@@ -1,7 +1,7 @@
 ---
 layout: default
 type: guide
-title: Unidata AWIPS II
+title: Unidata AWIPS
 subtitle: NEXRAD WSR-88D Products
 shortname: Appendix
 ---

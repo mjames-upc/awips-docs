@@ -30,13 +30,21 @@ shortname: Introducing
 [hibernate]: http://www.hibernate.org/ 
 [qpid]: http://qpid.apache.org 
 
-AWIPS II is a weather forecasting and analysis package used by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [NCEP](https://vlab.ncep.noaa.gov/web/awips-technical-library).  UCAR's **[Unidata Program Center](http://www.unidata.ucar.edu/software/awips2/)** supports an open source version for the academic and research geoscience communities.  
+AWIPS (formerly know as AWIPS II or AWIPS2) is a weather forecasting display and analysis package developed by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [Raytheon](http://www.raytheon.com/capabilities/products/awips/). AWIPS is a Java application consisting of a data-rendering client ([CAVE](#cave), which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server ([EDEX](#edex), which runs only on 64-bit CentOS or RedHat)
 
-AWIPS II is a Java application consisting of a data display client ([CAVE](#cave), which runs on Red Hat/CentOS Linux and OS X) and a backend data server ([EDEX](#edex), which runs only on Linux)
-
-AWIPS II takes a unified approach to data ingest, and most data types follow a standard path through the system, starting with an [LDM](#ldm) client requesting data from Unidata's [IDD](http://www.unidata.ucar.edu/projects/#idd).  These data are decoded into HDF5 and PostgreSQL/PostGIS metadata, and renderable with the [CAVE](#cave) client and the [Python Data Access Framework](https://github.com/Unidata/python-awips).
+AWIPS takes a unified approach to data ingest, and most data types follow a standard path through the system, starting with an [LDM](#ldm) client requesting data from Unidata's [IDD](http://www.unidata.ucar.edu/projects/#idd), which are then decoded and stored as HDF5 and PostgreSQL/PostGIS metadata. Unidata supports two visualization frameworks for rendering AWIPS data: 1) [CAVE](#cave), 2) the [Python Data Access Framework (python-awips)](https://github.com/Unidata/python-awips).
 
 ![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
+
+# License
+
+Unidata AWIPS source code and binaries (RPMs) are considered to be in the public domain, meaning there are no restrictions on any download, modification, or distribution in any form (original or modified).  Unidata AWIPS contains no proprietery content and is therefore not subject to export controls as stated in the [Master Rights](https://github.com/Unidata/awips2/blob/unidata_16.2.2/rpms/legal/Master_Rights_File.pdf) licensing file. 
+
+
+# License
+
+Unidata AWIPS source code and binaries (RPMs) are considered to be in the public domain, meaning there are no restrictions on any download, modification, or distribution in any form (original or modified).  Unidata AWIPS contains no proprietery content and is therefore not subject to export controls as stated in the [Master Rights](https://github.com/Unidata/awips2/blob/unidata_16.2.2/rpms/legal/Master_Rights_File.pdf) licensing file. 
+
 
 ## Software Components
 

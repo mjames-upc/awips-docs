@@ -17,7 +17,7 @@ This architecture provides separation between data sources and ingest processing
 
 ## Data Decoding
 
-Data decoding is defined as the process of converting data from a raw format into a decoded format that is usable by CAVE.  In AWIPS II, data decoding is performed by the EDEX Ingest proessing (**ingest** and **ingestGrib**).
+Data decoding is defined as the process of converting data from a raw format into a decoded format that is usable by CAVE.  In AWIPS, data decoding is performed by the EDEX Ingest proessing (**ingest** and **ingestGrib**).
 
 1. EDEX Ingest obtains the “data available” message from the Qpid message broker, and determines the appropriate data decoder based on the message contents. EDEX Ingest then forwards the message to the chosen decoder.  Finally, the message is removed from the message queue.
 2. EDEX Ingest reads the data from Raw Data Storage.
@@ -25,7 +25,7 @@ Data decoding is defined as the process of converting data from a raw format int
 4. EDEX Ingest forwards the decoded data to Processed Data Storage.
 5. EDEX Ingest sends a message to the CAVE client indicating that newly-decoded data is available.
 
-It is important to note that in AWIPS II all data types are processed by either the standard **ingest** process, or by the **ingestGrib** process, which handles all grib message ingestion. Once this data decoding process is complete, clients may obtain and perform additional processing on the data, including displaying data in CAVE.
+It is important to note that in AWIPS all data types are processed by either the standard **ingest** process, or by the **ingestGrib** process, which handles all grib message ingestion. Once this data decoding process is complete, clients may obtain and perform additional processing on the data, including displaying data in CAVE.
 
 ### Processed Data Storage Architecture
 
@@ -37,14 +37,14 @@ Writing to Processed Data Storage involves the following:
 * 1) The **EDEX Process** sends serialized data, area data, and certain point data to PyPIES.
 * 2) **PyPIES** writes the data to the HDF5 data store.
 * 3) **EDEX** send the metadata to the Postgres DBMS
-* 4) **Postgres** writes the metadata to the AWIPS II database.
+* 4) **Postgres** writes the metadata to the AWIPS database.
 
 For data not stored in HDF5, Steps 1 and 2 are skipped.
 
 For processed data retrieval, the process is revered:
 
 * 3) **EDEX** requests the metadata from Postgres.
-* 4) **Postgres** reads the AWIPS II database and returns the requested metadata to EDEX.
+* 4) **Postgres** reads the AWIPS database and returns the requested metadata to EDEX.
 * 1) **EDEX** sends a data request to PyPIES.
 * 2) **PyPIES** reads the data from the HDF5 data store and returns it to EDEX.
 
@@ -63,7 +63,7 @@ For clustered EDEX servers using IPVS, this architecture allows CAVE clients to 
 
 ## Data Purge Architecture
 
-Raw data storage and processed data storage use two different purge mechanisms.  For processed data storage, AWIPS II implements a plugin based purge strategy, where the user has the option to change the purge frequency for each plugin individually. 
+Raw data storage and processed data storage use two different purge mechanisms.  For processed data storage, AWIPS implements a plugin based purge strategy, where the user has the option to change the purge frequency for each plugin individually. 
 
 ### Raw Data Purge
 
@@ -71,7 +71,7 @@ Purging of Raw Data Storage is managed by the LDM user account cron, which execu
 
 1. An **ldm** user cron job executes ldmadmin.
 2. **ldmadmin** executes the LDM scour program.
-3. The **LDM scour program** deletes outdated data from AWIPS II Raw Data Storage.
+3. The **LDM scour program** deletes outdated data from AWIPS Raw Data Storage.
 
 
 ### Processed Data Purge

@@ -39,7 +39,7 @@ The list of available commands is shown at the botton of the command output ([ed
     Starting EDEX Camel (request): 
     Starting EDEX Camel (ingest): 
     Starting EDEX Camel (ingestGrib): 
-    Starting AWIPS II LDM:The product-queue is OK.
+    Starting AWIPS LDM:The product-queue is OK.
     ...
 
 # edex stop
@@ -52,7 +52,7 @@ The list of available commands is shown at the botton of the command output ([ed
     Stopping QPID                                              [  OK  ]
     Stopping httpd:                                            [  OK  ]
     Stopping EDEX PostgreSQL:                                  [  OK  ]
-    Stopping AWIPS II LDM:Stopping the LDM server...
+    Stopping AWIPS LDM:Stopping the LDM server...
     ...
     
 # edex setup

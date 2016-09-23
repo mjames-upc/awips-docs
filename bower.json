@@ -1,7 +1,7 @@
 {
-  "name": "AWIPS II User Guide",
+  "name": "Unidata AWIPS User Guide",
   "version": "0.0.0",
-  "homepage": "https://github.com/Polymer/docs",
+  "homepage": "https://github.com/Unidata/awips-docs",
   "authors": [
     "Michael James <mjames@ucar.edu>"
   ],

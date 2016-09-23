@@ -16,7 +16,7 @@ EDEX alerts the appropriate decoding plug-ins of new data by use of XML files th
 
 Distribution filters are stored in the **edex_static** branch of the Localization Store, and a list of available files can be found in the base-level directory.  
 
-For each plug-in, the distribution file is named `<data-type>.xml`; for example, the distribution file for satellite data is `satellite.xml`. The distribution files follow the AWIPS II base/site localization pattern: 
+For each plug-in, the distribution file is named `<data-type>.xml`; for example, the distribution file for satellite data is `satellite.xml`. The distribution files follow the AWIPS base/site localization pattern: 
     
     [root@edex]# cd /awips2/edex/data/utility/edex_static/base/distribution
     [root@edex distribution]# ls

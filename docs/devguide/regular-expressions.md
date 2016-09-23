@@ -6,7 +6,7 @@ title: Regular expressions
 subtitle: EDEX Admin
 ---
 
-AWIPS II uses regular expressions for data filtering at two steps in the ingest process:
+AWIPS uses regular expressions for data filtering at two steps in the ingest process:
 
 1. the [LDM](system-architecture.html#ldm) uses regular expressions to determine which data to write to **/awips2/data_store**/.
 

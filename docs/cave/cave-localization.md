@@ -5,7 +5,7 @@ title: Changing Localization Site
 
 # Five Pane Layout
 
-The default localization site is OAX (a large contingent of Raytheon AWIPS developers work in Omaha and the OAX WFO was the first to integrate and test AWIPS II).   Unidata AWIPS II 16.1.4 (and later) allow switching the localization site to any NWS WFO ID.  Releases before 16.1.4 are stuck on OAX unless the server administrator manually changes or adds other localization sites (just update to the latest...).
+The default localization site is OAX (a large contingent of Raytheon AWIPS developers work in Omaha and the OAX WFO was the first to integrate and test AWIPS).   Unidata AWIPS 16.1.4 (and later) allow switching the localization site to any NWS WFO ID.  Releases before 16.1.4 are stuck on OAX unless the server administrator manually changes or adds other localization sites (just update to the latest...).
 
 In the menubar, seelct **View > 5 Pane Layout** to make visible a left sidebar containing hemispheric, regional, state, and WFO-level maps.  These maps can be toggled/selected/swapped with a right click. 
 

@@ -63,26 +63,40 @@ This section is divided into two parts. The upper part lists individual products
 # MRMS
 
 
-
+---
 
 # FNEXRAD Composites
 
 ## DHR
 
+![image](../images/dhr.png)
+
 ## DLV
+
+![image](../images/dvl.png)
 
 ## EET
 
+![image](../images/eet.png)
+
 ## HHC
 
-## N1P
+![image](../images/hhc.png)
 
-## NTP
+## DAA
 
-# Mosaic
+![image](../images/daa.png)
+
+## DTA
+
+![image](../images/dta.png)
+
+---
+
+# Mosaic Radar Plots
 
 Mosaics available via this menu use data from up to nine nearby radars. Additional optional
-mosaics on cascading menus provide a limited list of radar products from a predefined set of WSR-88D radars within a given region. Your System Manager or site Administrator can set up such mosaics by: `/awips2/edex/data/utility/common_static/site//radar/radarInUse.txt`. A mosaicInfo.txt table will only work while logged on to an AWIPS workstation.
+mosaics on cascading menus provide a limited list of radar products from a predefined set of WSR-88D radars within a given region. Your System Manager or site Administrator can set up such mosaics by: `/awips2/edex/data/utility/common_static/site/<SITE>/radar/radarInUse.txt`. A mosaicInfo.txt table will only work while logged on to an AWIPS workstation.
 
 ## N0Q
 
@@ -92,7 +106,9 @@ mosaics on cascading menus provide a limited list of radar products from a prede
 
 ## DAA
 
-# Applications
+---
+
+# Radar Applications
 
 ## Estimated Actual Velocity (EAV)
 

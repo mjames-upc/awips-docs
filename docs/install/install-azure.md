@@ -18,7 +18,7 @@ subtitle: Install & Config
 
 > All of these commands are issued as root user!
 
-Create user **awips** and group **fxalpha** and create AWIPS II directories.
+Create user **awips** and group **fxalpha** and create AWIPS directories.
 
     groupadd fxalpha
     useradd -G fxalpha awips

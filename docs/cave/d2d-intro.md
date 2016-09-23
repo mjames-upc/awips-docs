@@ -6,7 +6,7 @@ subtitle: D2D User Guide
 
 # D2D Toolbar
 
-D2D (Display 2-Dimensions) is the default AWIPS II CAVE perspective, designed to mimmic the look and feel of the legacy AWIPS I system. 
+D2D (Display 2-Dimensions) is the default AWIPS CAVE perspective, designed to mimmic the look and feel of the legacy AWIPS I system. 
 
 * System menus include **CAVE**, **File**, **View**, **Options**, **Tools**, and **Help** (far right)
 

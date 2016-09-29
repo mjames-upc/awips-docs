@@ -41,28 +41,32 @@
       showingSearch: false,
       badge: '',
       toggleSearch: function(e, detail, sender) {
+
         $rows = $('table tr');
+
         if (e) { // comes first
           e.stopPropagation();
         }
         if (e.target === this.$.input) {
           return;
         }
-
         this.showingSearch = true;
         this.classList.add('search-on');
         this.async(function() {
           this.$.input.focus();
         });
+
       },
       disableSearch: function(e, detail, sender) {
+
         if (sender.value == "") {
           this.classList.remove('search-on');
           this.showingSearch = false;
-          console.log("empty...");
         }
+
       },
       onKeyPress: function(e, detail, sender) {
+
         $rows = $('table tr');
         var val = '^(?=.*\\b' + $.trim(sender.value).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
                 reg = RegExp(val, 'i'),
@@ -70,7 +74,6 @@
 
         $rows.show().filter(function() {
           text = $(this).text().replace(/\s+/g, ' ');
-          //console.log(text);
           return !reg.test(text);
         }).hide();
 

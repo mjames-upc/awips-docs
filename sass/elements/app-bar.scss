@@ -85,13 +85,13 @@ polyfill-next-selector { content: ':host a'; }
 }
 
 input {
-  background-color: inherit;
+  background-color: white;
   border: none;
   font-size: 20px;
   outline: none;
   padding: 0;
   // transition: width 400ms;
-  color: inherit;
+  color: #444;
   @include flex(1 0 0);
   visibility: hidden;
   -webkit-appearance: none;

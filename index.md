@@ -1,8 +1,8 @@
 ---
 layout: default
 type: about
-title: Unidata AWIPS
-subtitle: About
+title: About AWIPS
+subtitle: Overview
 shortname: Introducing
 ---
 

@@ -16,46 +16,68 @@ Frame control, map projection, image properties, and a few featured applications
 
 ![image](../images/iuNDS6J.png)
 
-# Preferences
+# Map Projections
 
-**CAVE > Preferences**
+The first toolbar menu item is a dropdown menu for different geographic areas and map projections.  The default view is always **CONUS**, which is a North Polar Steregraphic projection centered on the Continental United States.
 
-Set the Localization Site and/or derver for the workstation; configure mouse operations, change performance levels, font magnification, and text workstation hostname.
+Default projections and areas available in the menu
 
-![image](../images/ymFRs6S.png)
+   * **N. Hemisphere** (North Polar Stereographic)
+   * **Regional** (for the selected localization site)
+   * **WFO** (for the selected localization site)
+   * **World Mercator**
+   * **World CED**
+   * **World Mollweide**
+   * and **Regional** Mercator projections for **Africa**, **Australia/NZ**, **South America**, **Europe**, **Alaska**, **Hawaii**, **Puerto Rico**, **Japan**, **Pacific Ocean**, and the north and south poles.
 
-
-# Switching Perspectives
-
-**CAVE > Perspective**
-
-D2D is one of many available CAVE perspectives.  By selecting the **CAVE** > **Perspective** menu you can switch into the **GFE**, **Hydro**, **Localization**, **MPE**, or **National Centers Perspective** (which is available in the **Other...** submenu. Nobody seems to know why the NCP is not listed with the other perspectives, or how to make it appear with them).
-
-![image](../images/OU6rWMD.png)
+![image](../images/mapscales.jpg)
 
 # Resource Stack
 
 At bottom-right of the map window the the Resource Stack, which displays all loaded resources and map overlays, and allows for interaction and customization with the resource via a **right-click menu**.
 
-## Left-Click Resource Name to Hide
+>#### Left-Click Resource Name to Hide
 
 A left click on any resource in the stack will hide the resource and turn the label gray.  Clicking the name again makes the resource visible.
 
 ![image](../images/rASkR3Rp6y.gif)
 
-## Hold-Right-Click Resource Name for Menu
+>#### Left-Click Background to Hide Resource Types
 
-Drag the mouse over a loaded resource and **hold** the right mouse button until a menu appears (simply clicking the resource with the right mouse button will toggle its visibility). 
+A left click of the mouse anywhere on the map will hide the Resource Stack display names, which may help to declutter the view if a number of data types are loaded at once.
 
-The hold-right-click menu allows you to control individual resource **Image Properties**, **Change Colormaps**, change resource color, width, density, and magnification, **move resources up and down** in the stack, as well as configure custom options with other interactive resources. 
+>#### Hold-Right-Click Background for Display Menu
 
-![image](../images/lP4W1kmTIh.gif)
+Holding down the right mouse button anywhere in the map view will open a right-click menu
 
-## Hold-Right-Click the Map Background 
+![image](../images/rightclickmenu.gif)
 
-for additional options, such as greater control over the resource stack legend, toggling a **4-panel display**, selecting a **Zoom** level, and setting a **Background Color**.  Most loaded resources will also have a menu option for reading out the pixel values:
+>#### Show Map Legends
+
+From the above menu select **Show Map Legends** and watch the Resource Stack show only map resources which are loaded to the view.
+
+![image](../images/maplayers.png)
+
+>#### Toggle 2 or 4-Panel Layout
+
+Right-click hold in the view and select **Two Panel Layout** or **Four Panel Layout** to create duplicates of the current view (note that any data loaded to the *view* will be loaded to *both displays within the view*).
+
+From this multi-pane display, hold-right-click again and you will see the **Single Panel Layout** option to switch back to a standard view (defaulting to the left of two, and top-left of four).
+
+>#### Sample Loaded Resources
+
+Most data types have a right-click menu option for reading out the pixel value, displayed as multi-line text for multiple resources.
 
 ![image](../images/ui4fNI3X0C.gif)
+
+
+>#### Hold-Right-Click Resource Name for Menu
+
+Drag the mouse over a loaded resource and **hold** the right mouse button until a menu appears (simply clicking the resource with the right mouse button will toggle its visibility).
+
+The hold-right-click menu allows you to control individual resource **Image Properties**, **Change Colormaps**, change resource color, width, density, and magnification, **move resources up and down** in the stack, as well as configure custom options with other interactive resources.
+
+![image](../images/lP4W1kmTIh.gif)
 
 
 # Product Browser
@@ -128,3 +150,45 @@ This option allows you to set the CAVE clock, located on the bottom of the scree
 # Set Background Color
 
 You can now set the background display color on your workstation. You can also set the background display color for a single pane via mouse Button 3 (B3).
+
+
+# Switching Perspectives
+
+**CAVE > Perspective**
+
+D2D is one of many available CAVE perspectives.  By selecting the **CAVE** > **Perspective** menu you can switch into the **GFE**, **Hydro**, **Localization**, **MPE**, or **National Centers Perspective** (which is available in the **Other...** submenu. Nobody seems to know why the NCP is not listed with the other perspectives, or how to make it appear with them).
+
+![image](../images/OU6rWMD.png)
+
+
+# Preferences
+
+Preferences and settings for the CAVE client can be found in the **CAVE > Preferences** menu.
+
+Set the Localization Site and server for the workstation; configure mouse operations, change performance levels, font magnification, and text workstation hostname.
+
+![image](../images/ymFRs6S.png)
+
+
+# Load Mode
+
+ Also under the Display Properties option is Load Mode, which provides different ways to display data by manipulating previous model runs and inventories of data sets. The selected load mode is shown on the toolbar when the Load Mode menu is closed.
+
+A description of the Load Mode options follow.
+
+* **Latest**: Displays forecast data only from the latest model run, but also backfills at the beginning of the loop with available frames from previous runs to satisfy the requested number of
+frames.
+* **Valid time seq**: Displays the most recent data and fills empty frames with previous data. For models, it provides the product from the latest possible run for every available valid time.
+* **No Backfill**: Displays model data only from the most recent model run time with no backfilling to fill out a loop. Using this Load Mode prevents the mixing of old and new data.
+* **Previous run**: Displays the previous model run, backfilling with frames from previous runs at the beginning of the loop to satisfy the requested number of frames.
+* **Prev valid time seq**: Displays the previous model run and fills empty frames with previous model data or analyses.
+* **Prognosis loop**: Shows a sequence of n-hour forecasts from successive model runs.
+* **Analysis loop**: Loads a sequence of model analyses but no forecasts.
+* **dProg/dt**: Selects forecasts from different model runs that all have the same valid times. This load mode is available only when there are no other products loaded in the large display
+pane.
+* **Forced**: Puts the latest version of a selected product in all frames without time-matching.
+* **Forecast match**: Overlays a model product only when its forecast times match those of an initially loaded product. This load mode is available only when another product is already
+loaded in the large display pane.
+* **Inventory**: Selecting a product when the load mode is set to Inventory brings up a Dialog Box with the available forecast and inventory times from which you can select the product you
+want. Inventory loads into the currently displayed frame.
+* **Slot**: Puts the latest version of a selected product in the currently displayed frame.

@@ -8,6 +8,14 @@ subtitle: D2D User Guide
 
 {% include toc.html %}
 
+# NEXRAD Radar Display
+
+The Unidata D2D Perspective features a selectable NEXRAD station display over a loop of the [FNEXRAD](http://www.unidata.ucar.edu/data/radar.html#fnexrad) Digital Hybrid Reflectivity product. Selecting any station will open a two-panel reflectivity and velocity view for the selected station.
+
+![image](../images/nexrad-display.png)
+
+![image](../images/radar-two-panel.png)
+
 # NEXRAD & TDWR Station Menus
 
 Individual NEXRAD station menus are accessible in **Radar** &gt; **NEXRAD Stations** and are grouped alphabetically for a condensed submenu structure.  With only the NEXRAD3 feedtype (NEXAD2 being disabled), notice that only some of the menu items will out with available data.
@@ -15,8 +23,8 @@ Individual NEXRAD station menus are accessible in **Radar** &gt; **NEXRAD Statio
 ![image](../images/rnJIkyR.png)
 
 
-# Best Res Z+SRM8
-# Best Res Z+V
+
+# Best Res Z+SRM8 / Z+V
 
 The radar combination products Z+SRM and Z+V are precombined formats of the reflectivity and storm relative motion or velocity, displayed together via a single menu selection. SRM products include the storm motion vector information, which is plotted in the upper left corner of the Main Display Pane.
 

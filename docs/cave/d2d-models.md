@@ -35,46 +35,66 @@ The dropdown menus in the Volume Browser menu bar contain options for controllin
     
 # VB Tools
 
->## Baselines
+>### Baselines
 
+Selecting Baselines displays 10 lines, labeled A-A' to J-J', along which cross-sections can be
+constructed from within the Volume Browser.  These baseline resources are **editable**.
 
->## Points
+If you are zoomed in over an area when you load baselines and none appear, press the middle mouse button (B3) to "snap" a baseline to where the mouse cursor is. The system chooses a baseline that has not been recently used. If you
+are working with a baseline, a second click with B3 will return you to the original baseline, even
+if you modified another baseline.
 
->## Choose by ID
+>### Points
+
+Points are used to generate model soundings, time-height cross-sections, time series, and variable vs.
+height plots using the Volume Browser. As with the Baselines, the locations of these Points can be
+edited in the following manner:
+
+* **"Snapping" an Interactive Point**: If you are zoomed in over an area when you load Interactive
+Points and no Points appear, click B3 to "snap" a Point to where the mouse cursor is positioned.
+The system chooses a Point that has not been recently used. If you are currently working with a
+Point, then a second B3 click will place another Point at the location of your cursor.
+* **Dynamic Reference Map**: When you generate a model sounding, a time-height cross-section, a
+time series, or a variable vs. height plot, a small reference map indicating the location(s) of the
+plotted sounding(s) is provided in the upper left corner of the Main Display Pane.
+
+Points may be created, deleted, hidden, and manipulated (location, name, font, and color). Points are
+not limited in terms of number, location, or designation. Points may also be assigned to different
+groups to facilitate their use.
 
 # Display Types
 
->## Plan View (default)
+>### Plan View (default)
 
 The default option for the Volume Browser. From the Plan-view perspective, data are plotted onto horizontal surfaces. The Plan view Planes are discussed in the planes section that follows. The additional options menu that appears in the Volume Browser menu bar allows you to choose whether you want the Plan view data to Animate in Time or Animate in Space.
 
->## Cross Section
+>### Cross Section
 
 Allows you to view gridded data as vertical slices along specific baselines. You need to use either the Interactive Baseline Tool or the predefined latitude/longitude baselines to specify the slice you wish to see. One of the additional options menus that appear in the Volume Browser menu bar allows you to choose whether you want the cross-section data to animate in time or space, while the other options menu allows you to adjust the vertical resolution. Descriptions of these options follows. (Note that the Fields and Planes submenu labels have changed after selecting "Cross section.") 
 
->## Time Height
+>### Time Height
 
 Used in conjunction with the Interactive Points Tool to enable you to view a time height cross section of a full run of gridded model data for a specific location. Additional options menus in the Volume Browser menu bar allow you to choose the direction in which you want the data to be plotted, and to adjust the vertical resolution. 
 
->## Var vs Hgt
+>### Var vs Hgt
 
 Enables you to view a profile of a meteorological model field as it changes through height, which is displayed in millibars. By using the Interactive Points Tool, you can select one or more locations from which to plot the data.
 
 
->## Sounding
+>### Sounding
 
 Works in conjunction with the Interactive Points Tool to enable you to generate a Skew-T chart for a specific location, no additional menus appear in the Volume Browser when the Soundings setting is chosen.
 
->## Time Series
+>### Time Series
 
 Used in conjunction with the Interactive Points Tool to enable you to plot gridded data on a time versus data value graph for a specified point.
 
 # Animation Types
 
->## Time
+>### Time
 
 The default option for the Volume Browser. It allows you to view model data through time
 
->## Space
+>### Space
 
 Allows you to loop through a series of predefined latitude or longitude cross-sectional slices at a fixed time.

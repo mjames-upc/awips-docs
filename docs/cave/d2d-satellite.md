@@ -76,3 +76,5 @@ Scatterometer Winds are obtained from the ASCAT instrument on EUMETSAT's MetOP-A
 
 ASCAT winds (25 km retrieval resolution but interpolated and displayed at 12.5 km resolution) are launchable from both the CAVE Satellite menu and the Upper Air menu. The ASCAT instrument generates ocean surface wind retrievals. The ASCAT Scatterometer Ocean Winds product is displayable on
 CAVE at all scales.
+
+![image](../images/X8MpdM4.png)

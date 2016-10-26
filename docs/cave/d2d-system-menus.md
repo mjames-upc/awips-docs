@@ -6,12 +6,6 @@ title: CAVE Menus
 subtitle: Maps, Projections, and Bundles
 ---
 
-# Maps
-
-The default **CONUS** polar stereographic projection can be changed by selecting the Map Scales menu at top-left (click **CONUS to expand)**...
-
-![image](../images/mapscales.jpg)
-
 **File > New Map**
 
 Opens a new map editor tab with the default projection (CONUS Polar Stereographic).  
@@ -84,11 +78,15 @@ will bring up the workstation print dialog.
 
 **File > Export > KML**
 
-The displays can then be used in other applications or sent to other users for analysis. The "Export" submenu also includes a "KML" option, which allows users to save D2D displays in the KML (Keyhole Markup Language) file format (actually as a compressed KMZ), which can be used in applications such as Google Earth.
+The "Export" submenu also includes a "KML" option, which allows users to save D2D displays or
+GFE grids in the KML (Keyhole Markup Language) file format. When zipped (compressed), the KML
+file format forms a KMZ file, which can be used in applications such as Google Earth.
 
 ![image](../images/YRP9kOM.png)
 
-The KML dialog box includes options to select frames to export, as well as the following "Other Options":
+The KML dialog box includes options to select frames to export. This includes exporting all frames,
+the current/displayed frame, a range of frames, and, in GFE, the selected time range as highlighted in
+the Grid Manager. Additional options are available for selection under the "Other Options" section:
 
 * **Export Hidden**: When selected, all displayed and hidden products listed in the Product Legend section of the Main Display Pane will be exported.
 

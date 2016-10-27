@@ -131,7 +131,7 @@ Note: if you have the LDM and ingestGrib currently processing live data via the 
 
 To return the most recently added grids which have not matched a geospatial grid file (using the 'GribModel' string in the model name dataURI):
     
-    metadata=# select * from grid_info where datasetid like '%GribModel%';
+    metadata=# select * from grid_info where datasetid like '%GribModel:7:0:89%';
                                                            |    8413
     
      11530106 |        21600 | 2014-10-23 18:00:00 | [FCST_USED]              | 2014-10-24 00:00:00 | 2014-10-24 00:00:00 | 2014-10-26 14:31:51.394 | /grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/null/261/BLI/BL/0.0/180.0                                                          |    8401
@@ -142,7 +142,7 @@ Notice the dataURI of `/grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/nul
 
 Check the count!
 
-    metadata=# select count(*) from grid_info where datasetid like '%GribModel%';
+    metadata=# select count(*) from grid_info where datasetid like '%GribModel:7:0:89%';
     
      count
     

@@ -132,8 +132,7 @@ Note: if you have the LDM and ingestGrib currently processing live data via the 
 To return the most recently added grids which have not matched a geospatial grid file (using the 'GribModel' string in the model name dataURI):
     
     metadata=# select * from grid_info where datasetid like '%GribModel:7:0:89%';
-                                                           |    8413
-    
+                                    |    8413
      11530106 |        21600 | 2014-10-23 18:00:00 | [FCST_USED]              | 2014-10-24 00:00:00 | 2014-10-24 00:00:00 | 2014-10-26 14:31:51.394 | /grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/null/261/BLI/BL/0.0/180.0                                                          |    8401
      11530102 |        21600 | 2014-10-23 18:00:00 | [FCST_USED]              | 2014-10-24 00:00:00 | 2014-10-24 00:00:00 | 2014-10-26 14:31:51.375 | /grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/null/261/vW/BL/120.0/150.0                                                         |    8400
      11530101 |        21600 | 2014-10-23 18:00:00 | [FCST_USED]              | 2014-10-24 00:00:00 | 2014-10-24 00:00:00 | 2014-10-26 14:31:51.371 | /grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/null/261/CAPE/BL/0.0/180.0
@@ -143,13 +142,9 @@ Notice the dataURI of `/grid/2014-10-23_18:00:00.0_(6)/GribModel:7:0:89/null/nul
 Check the count!
 
     metadata=# select count(*) from grid_info where datasetid like '%GribModel:7:0:89%';
-    
      count
-    
     -------
-    
        799
-    
     (1 row)
 
 799 records confirms that this is our WRF grib file.
@@ -159,9 +154,7 @@ What does `GribModel:7:0:89` mean? A refresher:
 GribModel = default name for grid not found
 
     7 = center ID (NCEP)
-    
     0 = subcenter ID
-    
     89 = process ID
 
 At this point, EDEX manual ingest and decoding has been confirmed to work, but we need the WRF grib file matched against a geospatial grid file.  Luckily, this bootstrap method provides us with a record of grid projection in the `gridcoverage` table (hint, the entry containing the WRF grid coverage will be the most recently added record)
@@ -204,11 +197,8 @@ The information we need for this grid is such:
 
 ###  GEOSPATIAL FILES
 
-1. A file containing geospatial information for the grib data.  Geospatial information files are stored in:
-
-        /awips2/edex/data/utility/edex_static/base/grib/grids
+1. A file containing geospatial information for the grib data.  Geospatial information files are stored in `/awips2/edex/data/utility/edex_static/base/grib/grids`
         
-        /awips2/edex/data/utility/edex_static/site/LLL/grib/grids
 
 An easy tip is to grep for existing similar navigation (using majoraxis or minoraxis, or both):
 
@@ -263,11 +253,7 @@ And edit the new wrf.xml file to include the necessary projection information (e
 
 ### GRID MODEL FILES
 
-2. A grib model xml file with a unique numerical grid identifier.  The contents between the `<grid>` tags must match the contents between the `<name>` tags in the geospatial information file.  Grib model xml files are found in:
-
-    /awips2/edex/data/utility/edex_static/base/grid/models
-        
-    /awips2/edex/data/utility/edex_static/site/LLL/grid/models
+2. A grib model xml file with a unique numerical grid identifier.  The contents between the `<grid>` tags must match the contents between the `<name>` tags in the geospatial information file.  Grib model xml files are found in `/awips2/edex/data/utility/edex_static/base/grid/models`.
 
 Notice `<name>201155</name>` defined from the number of grid points (201 x 155) in the previous geospatial file.  This is the name that must be matched in our new file `gribModels_UPC.xml`, which requires an entry in order for this grid to work.  
 

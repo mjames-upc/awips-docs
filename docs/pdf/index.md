@@ -11,3 +11,4 @@ title: NWS Release Documentation
 * [AWIPS Flow Tag Instructions: ADE Setup](AWP.FT.SWCTR.ADE-12.00.pdf)
 * [AWIPS Operational Build 16.2.2 Final Release Notes](AWP.RLSN.OB16.2.2_Final.pdf)
 
+> From [http://collaborate2.nws.noaa.gov/partners/](http://collaborate2.nws.noaa.gov/partners/)

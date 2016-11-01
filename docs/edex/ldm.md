@@ -13,23 +13,17 @@ subtitle: EDEX Admin
 
 from `/awips2/ldm/etc/ldmd.conf`
 
-    REQUEST NEXRAD3 ".(DHR|DPR|DSP|DTA|DAA|DVL|EET|HHC|N0Q|N0S|N0U|OHA).*" idd.unidata.ucar.edu
+    REQUEST NEXRAD3 "./p(DHR|DPR|DSP|DTA|DAA|DVL|EET|HHC|N0Q|N0S|N0U|OHA|NVW|NTV|NST)." idd.unidata.ucar.edu
     REQUEST FNEXRAD|IDS|DDPLUS|UNIWISC ".*" idd.unidata.ucar.edu
     REQUEST NGRID ".*" idd.unidata.ucar.edu
     REQUEST NOTHER "^TIP... KNES.*" idd.unidata.ucar.edu
     REQUEST HDS|NIMAGE ".*" idd.unidata.ucar.edu
-    
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[0]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[1]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[2]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[3]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[4]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[5]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[6]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[7]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[8]$"    idd.unidata.ucar.edu
-    REQUEST CONDUIT ".(pgrb2.0p50|awip12|awip3d|awp236|awp252|nwstg/NWS_0).[9]$"    idd.unidata.ucar.edu
-    
+
+    REQUEST CONDUIT "nam" idd.unidata.ucar.edu
+    REQUEST CONDUIT "rap" idd.unidata.ucar.edu
+    REQUEST CONDUIT "pgrb2" idd.unidata.ucar.edu
+    REQUEST CONDUIT "nwstg" idd.unidata.ucar.edu
+
 > Remember than LDM commands such as these require **TAB SEPARATION** between items.
 
 # Optional LDM Feeds
@@ -48,17 +42,11 @@ FSL/GSD Experimental HRRR (Sub-hourly)
 
     REQUEST FSL2 "^GRIB2.FSL.HRRR" hrrr.unidata.ucar.edu
 
-# Stop & Start the LDM
+# Restart the LDM
 
-1. as user `root`:
+    sudo service edex_ldm restart
 
-        service edex_ldm stop
-        service edex_ldm start
-
-2. as user `awips`:
-
-        ldmadmin stop
-        ldmadmin start
+    ldmadmin restart
         
 # Monitor Incoming Data Feeds
 

@@ -5,7 +5,7 @@ layout: default
 
 # CAVE
 
-* **CentOS/RHEL 6, OS X, Windows**
+* **CentOS/RHEL 6 or 7, OS X, Windows**
 * **8GB** memory
 * **1.5GB** disk space (you should be prepared for more with caching datasets in `~/caveData`)
 * **2GB** video ram and OpenGL 2.0
@@ -13,8 +13,7 @@ layout: default
 
 # EDEX
 
-
-* **64-bit CentOS/RHEL 6**
+* **64-bit CentOS/RHEL 6** (CentOS/RH 7 not supported yet)
 * **8 CPU** cores minimum, **16** recommended. 
 * **16GB** RAM minimum, **32GB+** recommended for large servers processing more of the IDD.
 * **500GB** minimum footprint, more if you plan to build a data archive

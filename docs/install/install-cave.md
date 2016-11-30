@@ -21,7 +21,7 @@ Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-c
 
 <br>
 
-# Linux client
+# Linux client (RedHat/CentOS 6 and 7)
 
 Download and run the script [installCAVE.sh](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh).
 

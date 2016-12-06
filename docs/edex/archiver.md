@@ -50,7 +50,33 @@ Admins can use the CAVE User Administration interface to manage user access role
 
 # EDEX Archiver
 
+/awips2/edex/conf/resources/com.raytheon.uf.edex.archive.cron.properties
+
+    # enable archive
+    archive.enable=false
+    # runs database and hdf5 archive for archive server to pull data from 
+    archive.cron=0+40+*+*+*+?
+    # path to store processed archive data
+    archive.path=/awips2/archive
+    
+    # enable archive purge
+    archive.purge.enable=true
+    # when to purge archives
+    archive.purge.cron=0+5+0/2+*+*+?
+    # compress database records
+    archive.compression.enable=false
+    
+    # To change Default case directory.
+    #archive.case.directory=/awips2/edex/data/archiver/
+    
+    # to disable a specific archive, use property archive.disable=pluginName,pluginName...
+    #archive.disable=grid,text,acars
+
+
+
 The EDEX Archiver plugin can be used to automate data backup or create case study archive files to be retained by EDEX. The file `/awips2/edex/data/utility/common_static/base/archiver/purger/PROCESSED_DATA.xml` controls which products are ardhived, and how.
+
+
 
 ## Archive Log
 

@@ -7,15 +7,28 @@ title: EDEX Install and Config
 
 [<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installEDEX.sh)
 
-> CentOS/RHEL 6 is required to install Unidata AWIPS EDEX!
+> **EDEX can only be installed on CentOS/RHEL 6 or 7**
 
 ---
 
-# CentOS 6 One-Time Setup 
+# System Requirements
 
-To begin, first create user and group **awips:fxalpha**.  IP tables will need to be configured to allow specific TCP connections for EDEX: ports **5672**, **9581** and **9582**.
+* **64-bit CentOS/RHEL 6 or 7**
+* **8 CPU** cores (16 recommended) 
+* **16GB** RAM (32+GB recommended for full IDD processing)
+* **500GB** disk space, more if you plan to build a data archive.
+* An **SSD** mounted to `/awips2` contain the entire software system and data files.
  
-- `groupadd fxalpha && useradd -G fxalpha awips`
+>## Notes
+> * EDEX can scale to any system by reducing the volume of incoming data and/or turning off certain decoders (for example, with 4 core
+> * As of AWIPS 16.2.2, scouring of `/awips2/data_store` is performed at 30 minutes past every hour, and the default retention rate is
+
+
+# Linux One-Time Setup 
+
+Create user and group **awips:awips**.  IP tables will need to be configured to allow specific TCP connections for EDEX: ports **5672**, **9581** and **9582**.
+ 
+- `groupadd awips && useradd -G awips awips`
 
 -  `mkdir -p /awips2/data_store`
 
@@ -85,7 +98,7 @@ To begin, first create user and group **awips:fxalpha**.  IP tables will need to
 
 This will install to `/awips2/edex`, `/awips2/data` and other directories.
 
-> 64-bit CentOS/RHEL 6 is the only supported operating systems for EDEX (Though you may have luck with CentOS/RHEL 5, Fedora Core 12 to 14 and Scientific Linux). Not supported for EDEX: Debian, Ubuntu, SUSE, Solaris, OS X, Fedora 15+, CentOS/RHEL 7, Windows
+> 64-bit CentOS/RHEL 6 and 7 are the only supported Linux operating systems. You may have luck with Fedora Core 12 to 14 and Scientific Linux. EDEX is not supported on Debian, Ubuntu, SUSE, Solaris, OS X, or Windows.
 
 ## What does installEDEX.sh do?
 
@@ -95,9 +108,11 @@ This will install to `/awips2/edex`, `/awips2/data` and other directories.
 
 ---
 
-# Be Aware...
+# Final Steps
 
 - `/awips2/edex/bin/setup.env` should contain the **fully-qualified domain name** which can be externally resolved (localhost will not work). The command `edex setup` attempts to add the domain name of your EDEX machine to the file, but you should **always confirm this manually**.
+
+- `/awips2/ldm/etc/ldmd.conf` contains the upstream server (default *idd.unidata.ucar.edu*, which requires you connect form a .edu domain). This file also contains the **edexBridge** hostname (default *localhost*).
 
 - selinux should be **disabled** [(read more about selinux at redhat.com)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux.html)
     
@@ -108,7 +123,13 @@ This will install to `/awips2/edex`, `/awips2/data` and other directories.
         awips soft nproc 65536
         awips soft nofile 65536
     
-    
-    
-        
+# Important Directories
 
+* **/awips2** - This folder contains all of the installed AWIPS software. 
+* **/awips2/edex/data/hdf5** - Contains the HDF5 component of the data store and shared static data and hydro apps. 
+* **/awips2/edex/data/utility** - Contains localization store and EDEX configuration files. 
+* **/awips2/ldm** - LDM account home directory.
+* **/awips2/ldm/etc** - Location of *ldmd.conf* and *pqact.conf*.
+* **/awips2/ldm/logs** - Location of LDM logs.
+* **/awips2/data_store** - Raw Data Store File System
+* **/awips2/GFESuite** - Contains scripts and data relating to inter site coordination (ISC) and service backup.    

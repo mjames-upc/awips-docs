@@ -35,6 +35,7 @@ This will install to `/awips2/cave` and `/awips2/alertviz` (as well as awips2 sy
 ## Requirements
 
 * OpenGL 2.0
+* 8GB RAM
 * [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card.
 * 1.5GB disk space (you should be prepared for more with caching datasets in `~/caveData`)
 * All package dependencies should be resolved by yum.  Packages such as libXp, libXt, and openmotif will be picked up and installed along with CAVE. 

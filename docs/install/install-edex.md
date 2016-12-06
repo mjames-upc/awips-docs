@@ -26,9 +26,9 @@ title: EDEX Install and Config
 
 # Linux One-Time Setup 
 
-Create user and group **awips:awips**.  IP tables will need to be configured to allow specific TCP connections for EDEX: ports **5672**, **9581** and **9582**.
- 
-- `groupadd awips && useradd -G awips awips`
+Create user and group **awips:fxalpha**.  IP tables will need to be configured to allow specific TCP connections for EDEX: ports **5672**, **9581** and **9582**.
+
+- `groupadd fxalpha && useradd -G fxalpha awips`
 
 -  `mkdir -p /awips2/data_store`
 

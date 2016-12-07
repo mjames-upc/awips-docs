@@ -32,7 +32,7 @@ layout: default
 
 * 64-bit CentOS/RHEL 6 or 7
 * OpenGL 2.0
-* 8GB RAM
+* 4GB RAM
 * [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card
 * 2GB disk space for caching datasets in `~/caveData`
 

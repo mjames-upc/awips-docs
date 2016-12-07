@@ -1,9 +1,6 @@
 ---
 layout: default
-type: guide
-title: Unidata AWIPS
-subtitle: NEXRAD WSR-88D Products
-shortname: Appendix
+title: WSR-88D Products
 ---
 
 | Product Name  | Mnemonic  | ID  | Levels  | Res | Elevation |

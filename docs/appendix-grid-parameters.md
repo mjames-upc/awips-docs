@@ -1,9 +1,7 @@
 ---
 layout: default
 type: guide
-title: Unidata AWIPS
-subtitle: Grid Parameters
-shortname: Appendix
+title: Grid Parameters
 ---
 
 | Abbreviation | Description | Units |

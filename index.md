@@ -1,9 +1,7 @@
 ---
 layout: default
 type: about
-title: About AWIPS
-subtitle: Overview
-shortname: Introducing
+title: Introduction and Overview
 ---
 
 <style>
@@ -30,21 +28,24 @@ shortname: Introducing
 [hibernate]: http://www.hibernate.org/ 
 [qpid]: http://qpid.apache.org 
 
-AWIPS (formerly know as AWIPS II or AWIPS2) is a weather forecasting display and analysis package developed by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [Raytheon](http://www.raytheon.com/capabilities/products/awips/). AWIPS is a Java application consisting of a data-rendering client ([CAVE](#cave), which runs on Red Hat/CentOS Linux and Mac OS X) and a backend data server ([EDEX](#edex), which runs only on 64-bit CentOS or RedHat)
+> This manual is maintained by the [Unidata Program Center](https://www.unidata.ucar.edu), a [UCAR Community Program](https://www.ucp.ucar.edu/).
 
-AWIPS takes a unified approach to data ingest, and most data types follow a standard path through the system, starting with an [LDM](#ldm) client requesting data from Unidata's [IDD](http://www.unidata.ucar.edu/projects/#idd), which are then decoded and stored as HDF5 and PostgreSQL/PostGIS metadata. Unidata supports two visualization frameworks for rendering AWIPS data: 1) [CAVE](#cave), 2) the [Python Data Access Framework (python-awips)](https://github.com/Unidata/python-awips).
+[Unidata AWIPS](http://www.unidata.ucar.edu/software/awips2/) is a meteorological display and analysis package originally developed by the [National Weather Service](http://www.nws.noaa.gov/ost/SEC/AE/) and [Raytheon](http://www.raytheon.com/capabilities/products/awips/), repackaged by Unidata to support non-operational use in research and education by [UCAR member institutions](http://president.ucar.edu/governance/members/universities-representatives).
 
-![image](http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png)
+AWIPS takes a unified approach to data ingest, and most data types follow a path through the system starting with an [LDM](#ldm) client requesting data from the [Unidata IDD](http://www.unidata.ucar.edu/projects/#idd). These data files are then decoded and stored as HDF5 and Postgres metadata by [EDEX](docs/install/install-edex.html). 
 
-# License
+Unidata supports two visualization frameworks for rendering AWIPS data: [CAVE](docs/install/install-cave.html), and the  [Python Data Access Framework (python-awips)](http://python-awips.readthedocs.io).
+
+## License
 
 Unidata AWIPS source code and binaries (RPMs) are considered to be in the public domain, meaning there are no restrictions on any download, modification, or distribution in any form (original or modified).  Unidata AWIPS contains no proprietery content and is therefore not subject to export controls as stated in the [Master Rights](https://github.com/Unidata/awips2/blob/unidata_16.2.2/rpms/legal/Master_Rights_File.pdf) licensing file. 
+
+<img style="float:right;width:450px;" src="http://www.unidata.ucar.edu/software/awips2/images/awips2_coms.png">
 
 ## Software Components
 
 * [EDEX](#edex)
 * [CAVE](#cave)
-* [Alertviz](#alertviz)
 * [LDM](#ldm)
 * [edexBridge](#edexbridge)
 * [Qpid](#qpid)
@@ -71,10 +72,6 @@ Common AWIPS Visualization Environment. The data rendering and visualization too
 
 ![CAVE](http://www.unidata.ucar.edu/software/awips2/images/Unidata_AWIPS2_CAVE.png)
 
-### Alertviz
-
-**Alertviz** is a modernized version of an AWIPS I application, designed to present various notifications, error messages, and alarms to the user (forecaster). AlertViz can be executed either independently or from CAVE itself.  In the Unidata CAVE client, Alertviz is run within CAVE and is not required to be run separately.  The toolbar is also **hidden from view** and is accessed by right-click on the desktop taskbar icon.
-
 ### LDM
 
 [http://www.unidata.ucar.edu/software/ldm/](http://www.unidata.ucar.edu/software/ldm/)
@@ -92,6 +89,7 @@ edexBridge, invoked in the LDM configuration file `/awips2/ldm/etc/ldmd.conf`, i
 **Apache Qpid**, the Queue Processor Interface Daemon, is the messaging system used by AWIPS to facilitate communication between services.  When the LDM receives a data file to be processed, it employs **edexBridge** to send EDEX ingest servers a message via Qpid.  When EDEX has finished decoding the file, it sends CAVE a message via Qpid that data are available for display or further processing. Qpid is started and stopped by `edex start` and `edex stop`, and is controlled by the system script `/etc/rc.d/init.d/qpidd`
 
 ### PostgreSQL
+
 [http://www.postgresql.org](http://www.postgresql.org)
 
 **PostgreSQL**, known simply as Postgres, is a relational database management system (DBMS) which handles the storage and retrieval of metadata, database tables and some decoded data.  The storage and reading of EDEX metadata is handled by the Postgres DBMS.  Users may query the metadata tables by using the termainal-based front-end for Postgres called **psql**. Postgres is started and stopped by `edex start` and `edex stop`, and is controlled by the system script `/etc/rc.d/init.d/edex_postgres`

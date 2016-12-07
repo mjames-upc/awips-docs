@@ -1,9 +1,7 @@
 ---
 layout: default
 type: guide
-title: Unidata AWIPS
-subtitle: COTS and FOSS
-shortname: Appendix
+title: COTS and FOSS
 ---
 
 COTS and FOSS used in AWIPS

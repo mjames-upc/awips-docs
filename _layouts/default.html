@@ -9,7 +9,7 @@
   <app-drawer id="sidebar" unresolved>
     <div layout vertical id="sidebar-content">
       <div id="logo-container" layout horizontal center>
-        <a href="{{ site.baseurl }}/" class="logo"><img src="{{ site.baseurl }}/images/logos/awips2.png" alt="Unidata AWIPS User Guide"></a>
+        <a href="{{ site.baseurl }}/" class="logo"><img style="width:200px;" src="{{ site.baseurl }}/images/logos/awips2.png" alt="Unidata AWIPS User Guide"></a>
       </div>
 
       <docs-menu unresolved flex
@@ -22,13 +22,16 @@
   <scroll-area sidebar unresolved class="scrolling">
     <site-banner type="{{page.type}}" shortname="{{page.shortname}}" unresolved>
       {% include top-nav.html %}
+
+          {% if page.title %}
       <header class="shrink">
         <h1>
-        {% if page.subtitle %}
-          {{page.subtitle}}
-        :{% endif %} {{page.title}}
+            {% if page.subtitle %}
+              {{page.subtitle}}
+            :{% endif %} {{page.title}}
         </h1>
       </header>
+          {% endif %}
     </site-banner>
 
     {% comment %}

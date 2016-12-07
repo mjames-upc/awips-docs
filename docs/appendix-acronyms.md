@@ -1,9 +1,7 @@
 ---
 layout: default
 type: guide
-title: Unidata AWIPS 
-subtitle: Acronyms and Abbreviations
-shortname: Appendix
+title: Acronyms and Abbreviations
 ---
 
 ## A

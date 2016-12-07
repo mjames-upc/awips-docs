@@ -16,7 +16,7 @@ title: EDEX Data Server Installation
 >* **16GB** RAM (32+GB recommended for full IDD processing)
 >* **500GB** disk space, more if you build a data archive. An **SSD is an especially good idea here**, mounted to `/awips2/edex/data/hdf5`  to contain the decoded data files, or mounted to `/awips2` to contain the entire AWIPS software system.
  
-EDEX **can scale to any system**, either by adjusting the incoming data feeds, or the resources allocated to each data type (read more), but when selecting a server, **more is always better**.
+EDEX **can scale to any system**, either by adjusting the incoming data feeds, or the resources allocated to each data type, but when selecting a server, **more is always better**.
 
 **64-bit CentOS/RHEL 6 and 7** are the only supported Linux operating systems. You may have luck with Fedora Core 12 to 14 and Scientific Linux. EDEX is not developed, tested, or supported on Debian, Ubuntu, SUSE, Solaris, OS X, or Windows.
 

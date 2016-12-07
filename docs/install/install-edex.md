@@ -150,7 +150,13 @@ The command `edex setup` attempts to add the domain name of your server.
         awips soft nproc 65536
         awips soft nofile 65536
 
-## 8. `edex start`
+To start and stop EDEX
+
+    edex start
+    
+and
+
+    edex stop
 
 ---
 

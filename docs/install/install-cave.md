@@ -3,9 +3,12 @@ title: Download and Install CAVE
 layout: default
 ---
 
+
+<img style="width:300px;float:right;" src="../../images/Unidata_AWIPS2_CAVE.png">
+
 # <core-icon icon="fa:apple" aria-label="file-download" role="img"></core-icon> CAVE for OS X
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips2-cave-16.2.2.dmg</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-16.2.2.dmg) Saves files to `~/Library/CAVE`.
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips2-cave-16.2.2.dmg</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-16.2.2.dmg) writes  config files to `~/Library/CAVE`
 
 <br>
 
@@ -13,9 +16,9 @@ layout: default
 
 # <core-icon icon="fa:windows" aria-label="file-download" role="img"></core-icon> CAVE for Windows
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.amd64.msi</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.amd64.msi</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi) writes files to `caveData` in the user's home directory. 
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.msi (32-bit)</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi) Saves files to `caveData` in the user's home directory. 
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.msi (32-bit)</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi)
 
 <br>
 
@@ -23,7 +26,7 @@ layout: default
 
 # <core-icon icon="fa:linux" aria-label="file-download" role="img"></core-icon> x86_64 Linux (CentOS/RHEL 6 or 7)
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>installCAVE.sh</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh) Installs to `/awips2/cave` and saves user files to `~/caveData`
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>installCAVE.sh</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh) installs to `/awips2/cave` and writes files to `~/caveData`
 
     chmod 755 ./installCAVE.sh
     ./installCAVE.sh

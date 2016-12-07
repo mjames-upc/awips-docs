@@ -3,48 +3,46 @@ title: Download and Install CAVE
 layout: default
 ---
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>Mac OS X</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Linux</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>32-bit Windows</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi)[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>64-bit Windows</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
+# <core-icon icon="fa:apple" aria-label="file-download" role="img"></core-icon> CAVE for OS X
+
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips2-cave-16.2.2.dmg</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-16.2.2.dmg) Saves files to `~/Library/CAVE`.
 
 <br>
 
-# OS X client
+---
 
-Download [awips2-cave.dmg](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave.dmg) (263 MB), click to open and drag to your Applications folder.  The application will write to a local data cache directory `~/Library/CAVE`.
+# <core-icon icon="fa:windows" aria-label="file-download" role="img"></core-icon> CAVE for Windows
 
-<br>
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.amd64.msi</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
 
-# Windows client
-
-32-bit [awips-cave.msi](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi)
-
-64-bit [awips-cave.amd64.msi](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.amd64.msi)
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips-cave.msi (32-bit)</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips-cave.msi) Saves files to `caveData` in the user's home directory. 
 
 <br>
 
-# Linux client (RedHat/CentOS 6 and 7)
+---
 
-Download and run the script [installCAVE.sh](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh).
+# <core-icon icon="fa:linux" aria-label="file-download" role="img"></core-icon> x86_64 Linux (CentOS/RHEL 6 or 7)
 
-    wget http://www.unidata.ucar.edu/software/awips2/installCAVE.sh
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>installCAVE.sh</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh) Installs to `/awips2/cave` and saves user files to `~/caveData`
+
     chmod 755 ./installCAVE.sh
     ./installCAVE.sh
 
-This will install to `/awips2/cave` and `/awips2/alertviz` (as well as awips2 system directories like `/awips2/java` and `/awips2/python`).
+## Linux Requirements
 
-
-## Requirements
-
+* 64-bit CentOS/RHEL 6 or 7
 * OpenGL 2.0
 * 8GB RAM
-* [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card.
-* 1.5GB disk space (you should be prepared for more with caching datasets in `~/caveData`)
-* All package dependencies should be resolved by yum.  Packages such as libXp, libXt, and openmotif will be picked up and installed along with CAVE. 
+* [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card
+* 2GB disk space for caching datasets in `~/caveData`
+
+> All package dependencies should be resolved by yum. 
 
 ## How to run CAVE
 
-    /awips2/cave/cave.sh
+Find CAVE in the GNOME menu **Applications** &gt; **Internet** &gt; **AWIPS CAVE**
 
-> AWIPS was originally built for 32-bit Red Hat 5 (which is what the old AWIPS I system runs on).  As of 2016, 64-bit RHEL and CentOS 6 are supported, and Fedora Linux 9-12 should work as well.   **Unsupported distros** include CentOS 7, Ubuntu, Debian, and pretty much everthing else.
+Or from the command line, simply type `cave`
 
 # AWIPS Data in the Cloud
 
@@ -55,8 +53,9 @@ Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cl
 
 # Troubleshooting
 
-## ~/caveData
-You can always reset CAVE by manually removing the `~caveData` directory (on OS X remove `~/Library/CAVE`.  Then run `/awips2/cave/cave.sh` again and you will be prompted to connect to an EDEX server again.  Your local files have been removed, but if user and workstation-specific files exist on the EDEX server (meaning you are re-connecting to one you have used before), the remote files will sync again to `~/caveData` or `~/Library/CAVE` (custom colormaps, bundles, etc.). So even if you delete your local sync, you can retrieve any saved bundles from EDEX just by connecting again and selecting the files from the **File > Import** menu.
+## Localization Preferences Error
+
+You can reset CAVE by removing the `~/caveData` directory (on OS X `~/Library/CAVE`) and then run `cave` again to connect to an EDEX server.  Your local files have been removed, but if you are re-connecting to an EDEX server you have used before, the remote files will sync again to your local `~/caveData` (bundles, colormaps, etc.). 
 
 ## No Images Displayed
 

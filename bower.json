@@ -22,7 +22,8 @@
     "marked": "*",
     "core-elements": "Polymer/core-elements#latest",
     "paper-elements": "Polymer/paper-elements#latest",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.6.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.6.0",
+    "fontawesome-iconset": "*"
   },
   "resolutions": {
     "webcomponentsjs": "^0.6.0",

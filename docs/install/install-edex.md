@@ -28,6 +28,10 @@ EDEX **can scale to any system**, either by adjusting the incoming data feeds, o
 
 `groupadd fxalpha && useradd -G fxalpha awips`
 
+or if the awips account already exists:
+
+`groupadd fxalpha && usermod -G fxalpha awips`
+
 ## 2. Configure iptables to allow TCP connections on ports **5672**, **9581** and **9582**
 
 - To open ports to **all connections**
@@ -80,6 +84,14 @@ EDEX **can scale to any system**, either by adjusting the incoming data feeds, o
 ## 3. Restart iptables
 
 `service iptables restart`
+
+> For CentOS 7 error: Redirecting to /bin/systemctl restart  iptables.service
+> Failed to restart iptables.service: Unit iptables.service failed to load: No such file or directory.
+>
+>	yum install iptables-services
+>	systemctl enable iptables
+>	service iptables restart
+
 
 ## 4. Disable SELinux
 

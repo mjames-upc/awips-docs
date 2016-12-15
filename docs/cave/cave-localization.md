@@ -1,22 +1,15 @@
 ---
 layout: default
-title: Changing Localization Site
+title: Change CAVE Localization Site
 ---
 
-# Five Pane Layout
+# Localization Preferences
 
-The default localization site is OAX (a large contingent of Raytheon AWIPS developers work in Omaha and the OAX WFO was the first to integrate and test AWIPS).   Unidata AWIPS 16.1.4 (and later) allow switching the localization site to any NWS WFO ID.  Releases before 16.1.4 are stuck on OAX unless the server administrator manually changes or adds other localization sites (just update to the latest...).
+The default localization site for Unidata AWIPS is BOU (Boulder, Colorado, where UCAR is located).  When you are prompted to connect to an EDEX server, you can change the WFO ID as well. 
 
-In the menubar, seelct **View > 5 Pane Layout** to make visible a left sidebar containing hemispheric, regional, state, and WFO-level maps.  These maps can be toggled/selected/swapped with a right click. 
+![](../images/connect.png)
 
-![](../images/cave-localization-2.png)
-
-
-
-# Change Localization Site for CAVE
-
-Under **CAVE > Preferences > Localization** you will see controls both for site and EDEX server name. 
-
+Since release 16.1.4, CAVE users can switch the localization site to any valid NWS WFO from **CAVE > Preferences > Localization**, where edits canbe made to both the site ID and EDEX server name. Click **Restart** after changes are applied. 
 
 ![](../images/cave-localization-3.png)
 
@@ -24,78 +17,9 @@ Change the site (example shows TBW Tampa Bay) and click **Okay** or **Apply** an
 
 ![](../images/cave-localization-4.png)
 
-On restart you will see the sidebar maps positioned for your selected site. 
 
-![](../images/cave-localization-5.png)
+# WFO Map Scales
 
+AWIPS release 16.2.2 contains all WFO map scales selectable in the left-most dropdown (**CONUS** by default).
 
-Grid Levels and Parameters
-==========================
-
-[Notebook]
-
-List Available Parameters for a Grid Name
------------------------------------------
-
-    from awips.dataaccess import DataAccessLayer
-    
-    # Select HRRR
-    DataAccessLayer.changeEDEXHost("edex-cloud.unidata.ucar.edu")
-    request = DataAccessLayer.newDataRequest()
-    request.setDatatype("grid")
-    request.setLocationNames("GFS40")
-    
-    # Print parm list
-    available_parms = DataAccessLayer.getAvailableParameters(request)
-    available_parms.sort()
-    for parm in available_parms:
-        print parm
-
-List Available Levels for Parameter
------------------------------------
-
-    # Set parm to u-wind
-    request.setParameters("uW")
-    
-    # Print level list
-    available_levels = DataAccessLayer.getAvailableLevels(request)
-    available_levels.sort()
-    for level in available_levels:
-        print level
-
-Construct Wind Field from U and V Components
---------------------------------------------
-
-    import numpy
-    from metpy.units import units
-    
-    # Set level for u-wind
-    request.setLevels("10.0FHAG")
-    t = DataAccessLayer.getAvailableTimes(request)
-    # Select last time for u-wind
-    response = DataAccessLayer.getGridData(request, [t[-1]])
-    data_uw = response[-1]
-    lons,lats = data_uw.getLatLonCoords()
-    
-    # Select v-wind
-    request.setParameters("vW")
-    # Select last time for v-wind
-    response = DataAccessLayer.getGridData(request, [t[-1]])
-    data_uv = response[-1]
-    
-    # Print 
-    print 'Time :', t[-1]
-    print 'Model:', data_uv.getLocationName()
-    print 'Unit :', data_uv.getUnit()
-    print 'Parms :', data_uw.getParameter(), data_uv.getParameter()
-    print data_uv.getRawData().shape
-    
-    # Calculate total wind speed
-    spd = numpy.sqrt( data_uw.getRawData()**2 + data_uv.getRawData()**2 )
-    spd = spd * units.knot
-    print "windArray =", spd
-    
-    data = data_uw
-
-
-  [Notebook]: http://nbviewer.ipython.org/github/Unidata/python-awips/blob/master/examples/notebooks/Grid_Levels_and_Parameters.ipynb
+![](../images/map_scales.png)

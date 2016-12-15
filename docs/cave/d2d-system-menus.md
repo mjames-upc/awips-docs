@@ -98,3 +98,40 @@ exported.
 * **Show Background Tiles**: When selected, data (such as plot data) will display on top of black
 tiles when loaded in Google Earth.
 
+
+
+# CAVE Import Data Formats
+
+CAVE supported the following geo-referenced data files. CAVE can import the following through formats through the **CAVE** -> **Import** menu.
+
+1. **GIS Data**
+
+2. **BCD File**
+
+3. **GeoTIFF**
+
+4. **LPI File**
+
+5. **SPI File**
+
+6. **Displays**
+
+![image](../images/image_14.png)
+
+## CAVE Export Data Formats
+
+CAVE can export to the following through the **CAVE** -> **Export** menu.
+
+1. **KML**
+
+2. **Editor Display**
+
+3. **Perspective Display**
+
+4. **Capture Current Frame**
+
+5. **Capture All Frames**
+
+6. **Print Screen**
+
+![image](../images/image_15.png)

@@ -3,14 +3,13 @@ layout: default
 title: National Centers Perspective (NCP)
 ---
 
-> The NCP perspective can be selected from the menu **CAVE** -> **Perspective** -> **Other** menu.
+{% include toc.html %}
 
 # NCP Toolbar
 
-
-The NCP toolbar includes two buttons to load **Data** and **Bundles**, respectively.  The toolbar also include a **Clear** button, **Zoom** and **Unzoom**, **Auto Update**, and the **NSHARP** plugin.
+The NCP toolbar includes two buttons to load **Data** and **Bundles**, respectively.  The toolbar also include a **Clear** button, **Zoom** and **Unzoom**,  and the **NSHARP** plugin.
  
-![image](../images/image_6.png)
+![image](../images/ncp_image_6.png)
 
 
 ## Load a single data product
@@ -21,7 +20,7 @@ The NCP toolbar includes two buttons to load **Data** and **Bundles**, respectiv
 
 3. Double-click the product, or select "**Add**" and the data will load to CAVE with the default number of frames (Note: this makes time-matching more difficult. For time-matching multiple products, load as a **Bundle**.)
 
-![image](../images/image_7.png)
+![image](../images/ncp_image_7.png)
 
 
 **Latest Available Data Time** or **Cycle Time** is underneath the Attributes column at bottom-right.
@@ -39,13 +38,13 @@ Open the Resource Manager by:
 
 * Click **File -> New -> Bundle**.
 
-![image](../images/image_8.png)
+![image](../images/ncp_image_8.png)
 
 ## Timeline
 
 A timeline is displayed for available data. Here, the user may choose the dominant resource, number of frames, time range, reference time, etc. for the products to be displayed.
 
-![image](../images/image_9.png)
+![image](../images/ncp_image_9.png)
 
 Clicking "**Load**" will keep open the Resource Manager while the selected data layers are loaded to the map. ”**Load and Close**” will display data and close the Resource Manager.
 
@@ -59,7 +58,7 @@ In AWIPS II CAVE, Bundles are organized within the Resource Manager GUI. Steps i
 
 3. Select or type-in your desired Group Name and Bundle name and click "**Save Bundle**".
 
-![image](../images/image_10.png)
+![image](../images/ncp_image_10.png)
 
 After saving a Bundle, its a good idea to confirm that it loads correctly. Select "**Bundle**" -> “**Load Bundle**” to find your newly created Bundle.
 
@@ -79,7 +78,7 @@ Deleting an Bundle Group is a fairly straightforward action. First, click the "*
 
 # Manage Data
 
-![image](../images/image_11.png)
+![image](../images/ncp_image_11.png)
 
 ## Edit Resource
 
@@ -92,42 +91,6 @@ Selection a Resource to edit allows you to update the number of frames, frame sp
 Using gridded data, selecting an Attribute to edit allows you to change the GEMPAK syntax used to define the resource.
 
 ![image](../images/image_13.png)
-
-# CAVE Import Data Formats
-
-CAVE supported the following geo-referenced data files. CAVE can import the following through formats through the **CAVE** -> **Import** menu.
-
-1. **GIS Data**
-
-2. **BCD File**
-
-3. **GeoTIFF**
-
-4. **LPI File**
-
-5. **SPI File**
-
-6. **Displays**
-
-![image](../images/image_14.png)
-
-## CAVE Export Data Formats
-
-CAVE can export to the following through the **CAVE** -> **Export** menu.
-
-1. **KML**
-
-2. **Editor Display**
-
-3. **Perspective Display**
-
-4. **Capture Current Frame**
-
-5. **Capture All Frames**
-
-6. **Print Screen**
-
-![image](../images/image_15.png)
 
 # Add a Grid Resource in NCP
 

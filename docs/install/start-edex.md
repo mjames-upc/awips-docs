@@ -3,31 +3,20 @@ layout: default
 title: EDEX Start and Stop
 ---
 
-# Quick Start
+{% include toc.html %}
 
-(as root)
+There are five EDEX service installed into `/etc/init.d/`, four of which run on boot:
 
-* `edex start`
-* `edex log ldm` - watch for live incoming data
-* `edex log`  - watch for active data decoding messages
+    service postgres start
+    service httpd-pypies start
+    service qpidd start
+    service edex_camel start
 
+The fifth, `edex_ldm`, does **not run at boot** to prevent filling up disk space if EDEX is not running. 
 
-AWIPS EDEX services are managed by the `edex` program
+    service edex_ldm start
 
-    > edex
-    
-    [edex status]
-     postgres    :: not running
-     pypies      :: not running
-     qpid        :: not running
-     EDEXingest  :: not running
-     EDEXgrib    :: not running
-     EDEXrequest :: not running
-     ldmadmin    :: not running
-
-     edex (status|start|stop|setup|log|purge|users)
-
-The list of available commands is shown at the botton of the command output ([edex start](#edex-start), [edex stop](#edex-stop), [edex setup](#edex-setup), [edex log](#edex-log), [edex purge](#edex-purge), [edex users](#edex-users)).
+All of these services are started and stopped by a single program `edex`,
 
 # edex start
 
@@ -79,9 +68,8 @@ This command configures and/or confirms that the EDEX hostname and IP address de
      :: No log specified - Defaulting to ingest log
      :: Viewing /awips2/edex/logs/edex-ingest-20151209.log. Press CTRL+C to exit
     
-    INFO  2015-12-09 18:34:42,825 [Ingest.binlightning-1] Ingest: EDEX: Ingest - binlightning:: /awips2/data_store/entlightning/20151209/18/SFPA42_KWBC_091833_38031177.2015120918 processed in: 0.0050 (sec) Latency: 0.0550 (sec)
-    Time spent in persist: 68
-    INFO  2015-12-09 18:34:45,951 [Ingest.obs-1] Ingest: EDEX: Ingest - obs:: /awips2/data_store/metar/20151209/18/SAIN31_VABB_091830_131392869.2015120918 processed in: 0.0810 (sec) Latency: 0.1800 (sec)\
+    INFO [Ingest.binlightning-1] /awips2/data_store/SFPA42_KWBC_091833_38031177.2015120918 processed in: 0.0050 (sec) Latency: 0.0550 (sec)
+    INFO [Ingest.obs-1] /awips2/data_store/metar/SAIN31_VABB_091830_131392869.2015120918 processed in: 0.0810 (sec) Latency: 0.1800 (sec)
 
 More edex logs...
 
@@ -103,34 +91,76 @@ To see a list of clients connecting to your EDEX server, use the `edex users [YY
     user@192.168.1.67
     awips@0.0.0.0
     awips@sdsmt.edu
-    ...
 
 # edex purge
-to view any stuck purge jobs in PortgreSQL (a rare but serious problem if your disk fills up).  The solution to this is to run `edex purge reset`.
 
-# `/etc/init.d` scripts
+To view any stuck purge jobs in PortgreSQL (a rare but serious problem if your disk fills up).  The solution to this is to run `edex purge reset`.
 
-There are four EDEX services which run on boot:
+---
 
-    service postgres start
-    service httpd-pypies start
-    service qpidd start
-    service edex_camel start
-     
+# EDEX Memory Configuration
 
-There is also an LDM init script called `edex_ldm` which does **not run at boot** (to prevent filling up disk space without EDEX processing or scouring):
+The directory `/awips2/edex/etc/` contains files which define the amount of memory used for each of the three EDEX JVMs (ingest, ingestGrib, request):
 
-    service edex_ldm start
+	ls -al /awips2/edex/etc/
+	-rw-r--r-- 1 awips fxalpha 1501 Dec  7 00:37 default.sh
+	-rw-r--r-- 1 awips fxalpha 1655 Dec 12 19:47 ingestGrib.sh
+	-rw-r--r-- 1 awips fxalpha  937 Dec 12 19:46 ingest.sh
+	-rw-r--r-- 1 awips fxalpha 1231 Dec 12 19:47 request.sh
 
-The service config files are located in `/etc/init.d/` and can be edited by **root**:
+Each file contains the **Xmx** definition for maximum memory:
 
+	export INIT_MEM=512 # in Meg
+	export MAX_MEM=4096 # in Meg
 
-    ls -la /etc/init.d/ |grep -e edex -e pypies -e qpid
+After editing these files, you must restart edex (`service edex_camel restart`).
 
-    -rwxr--r--   1 root  root     6693 Nov  7 17:53 edex_camel
-    -rwxr-xr-x   1 root  root     1422 Oct 29 15:28 edex_ldm
-    -rwxr--r--   1 root  root     2416 Sep  7 15:48 edex_postgres
-    -rwxr-xr-x   1 root  root     5510 Aug 26 13:05 httpd-pypies
-    -rwxr-xr-x   1 root  root     3450 Aug 26 13:04 qpidd
+---
+
+# EDEX Plugin Configuration
+
+The directory `/awips2/edex/conf/modes` contains XML files with rules defining which plugins are included or excluded with each JVM (ingest, ingestGrid, request):
+
+	ls -la /awips2/edex/conf/modes
+	-rw-r--r-- 1 awips fxalpha 1982 Dec  6 21:26 grid-modes.xml
+	-rw-r--r-- 1 awips fxalpha  928 Dec  6 21:24 ingest-modes.xml
+	-rw-r--r-- 1 awips fxalpha 1689 Dec  6 21:24 request-modes.xml
+
+EDEX services are all registered through spring. By including or excluding specific spring files we can determine at startup which services the EDEX instance should start.
+
+All mode files are merged at startup. Modes files with modes that have the same name are combined so the end result is an aggregate of patterns in all files.  Include and exclude tags should have regular expressions that are compatible with Java's Pattern class.  If you provide no `<include>` tag for a particular mode, the include defaults to `.*`.
+
+An example of `/awips2/edex/conf/modes/ingest-modes.xml`, with a number of unused plugin decoders excluded because the data are not available outside of the SBN:
+	
+	<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<edexModes>
+		<mode name="ingest">
+			<exclude>.*request.*</exclude>
+			<exclude>edex-security.xml</exclude>
+			<exclude>rpgenvdata.*</exclude>
+			<exclude>taf.*</exclude>
+			<exclude>ldad.*</exclude>
+			<exclude>ghcd.*</exclude>
+			<exclude>geomag.*</exclude>
+			<exclude>mping.*</exclude>
+			<exclude>modis.*</exclude>
+			<exclude>mosaic.*</exclude>
+			<exclude>shef.*</exclude>
+			<exclude>madis.*</exclude>
+			<exclude>idft.*</exclude>
+			<exclude>ffmp.*</exclude>
+			<exclude>stormtrack.*</exclude>
+			<exclude>solarimage.*</exclude>
+			<exclude>retrieval.*</exclude>
+			<exclude>regionalsat.*</exclude>
+			<exclude>pointset-netcdf.*</exclude>
+			<exclude>ncscat.*</exclude>
+			<exclude>profiler.*</exclude>
+			<exclude>bufrobs.*</exclude>
+			<exclude>bufrmthdw.*</exclude>
+			<exclude>sgwh.*</exclude>
+		</mode>
+	</edexModes>
+
 
 

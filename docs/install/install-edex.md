@@ -2,7 +2,7 @@
 layout: default
 type: guide
 shortname: Docs
-title: EDEX Data Server Installation 
+title: Install EDEX Data Server
 ---
 
 # <core-icon icon="fa:linux" aria-label="file-download" role="img"></core-icon> EDEX for Linux 

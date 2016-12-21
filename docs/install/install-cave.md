@@ -1,5 +1,5 @@
 ---
-title: Download and Install CAVE
+title: Install CAVE Viz Client
 layout: default
 ---
 

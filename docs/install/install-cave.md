@@ -17,7 +17,7 @@ layout: default
 
     > New to 10.12 is Gatekeeper Path Randomization, which prevents applications delivered outside of the Mac App Store from running by normal means (taskbar icon or finder). 
     >
-    > CAVE on Sierra should be run from the terminal with the command `/Applications/CAVE/cave.app/Contents/MacOS/cave`
+    > Until the next release, CAVE on Sierra should be run from the terminal with the command `/Applications/CAVE/cave.app/Contents/MacOS/cave`
 
 <br>
 
@@ -42,7 +42,7 @@ layout: default
 
 ## Linux Requirements
 
-* x86_64_ CentOS/RHEL 6 or 7
+* x86_64 CentOS/RHEL 6 or 7
 * OpenGL 2.0
 * 4GB RAM
 * [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card

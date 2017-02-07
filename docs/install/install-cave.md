@@ -1,14 +1,23 @@
 ---
-title: Install CAVE Viz Client
+title: Download and Install CAVE
 layout: default
 ---
 
 
 <img style="width:300px;float:right;" src="../../images/Unidata_AWIPS2_CAVE.png">
 
-# <core-icon icon="fa:apple" aria-label="file-download" role="img"></core-icon> CAVE for OS X
+# <core-icon icon="fa:apple" aria-label="file-download" role="img"></core-icon> CAVE for macOS
+ 
+> 10.11 (El Capitan) or lower
 
-[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips2-cave-16.2.2.dmg</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-16.2.2.dmg) writes  config files to `~/Library/CAVE`
+[<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>awips2-cave-16.2.2.dmg</paper-button>](http://www.unidata.ucar.edu/downloads/awips2/awips2-cave-16.2.2.dmg)
+ 
+ * Writes  config files to `~/Library/CAVE`
+ * macOS 10.12 (Sierra) not fully supported! Sierra requires cave be run from the command line:
+
+    > New to 10.12 is Gatekeeper Path Randomization, which prevents applications delivered outside of the Mac App Store from running by normal means (taskbar icon or finder). 
+    >
+    > CAVE on Sierra should be run from the terminal with the command `/Applications/CAVE/cave.app/Contents/MacOS/cave`
 
 <br>
 
@@ -24,7 +33,7 @@ layout: default
 
 ---
 
-# <core-icon icon="fa:linux" aria-label="file-download" role="img"></core-icon> x86_64 Linux (CentOS/RHEL 6 or 7)
+# <core-icon icon="fa:linux" aria-label="file-download" role="img"></core-icon> 64-bit Linux (CentOS/RHEL 6 or 7)
 
 [<paper-button raised role="button" tabindex="0"><core-icon icon="file-download" aria-label="file-download" role="img"></core-icon>installCAVE.sh</paper-button>](http://www.unidata.ucar.edu/software/awips2/installCAVE.sh) installs to `/awips2/cave` and writes files to `~/caveData`
 
@@ -33,7 +42,7 @@ layout: default
 
 ## Linux Requirements
 
-* 64-bit CentOS/RHEL 6 or 7
+* x86_64_ CentOS/RHEL 6 or 7
 * OpenGL 2.0
 * 4GB RAM
 * [Latest NVIDIA driver](http://www.nvidia.com/Download/index.aspx?lang=en-us) for your graphics card
@@ -58,7 +67,7 @@ Unidata and Microsoft have partnered to offer a EDEX data server in the Azure cl
 
 ## Localization Preferences Error
 
-You can reset CAVE by removing the `~/caveData` directory (on OS X `~/Library/CAVE`) and then run `cave` again to connect to an EDEX server.  Your local files have been removed, but if you are re-connecting to an EDEX server you have used before, the remote files will sync again to your local `~/caveData` (bundles, colormaps, etc.). 
+You can reset CAVE by removing the `~/caveData` directory (on macOS `~/Library/CAVE`) and then run `cave` again to connect to an EDEX server.  Your local files have been removed, but if you are re-connecting to an EDEX server you have used before, the remote files will sync again to your local `~/caveData` (bundles, colormaps, etc.). 
 
 ## No Images Displayed
 

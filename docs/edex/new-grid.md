@@ -5,7 +5,7 @@ shortname: Docs
 title: Add a New Grid to EDEX
 ---
 
-Unrecognized grids can be decoded by EDEX simply by dropping `*.grib` or `*.grib2` files into `/awips2/edex/data/manual/`
+Unrecognized grids can be decoded by EDEX simply by dropping `*.grib` or `*.grib2` files into `/awips2/data_store/ingest/`
 
 To add support for a new grid, two edits must be made:
 
@@ -15,11 +15,11 @@ To add support for a new grid, two edits must be made:
 
 # Ingest an Unsupported Grid
 
-1. Download an example grib1 file and rename to a `*.grib` extension, then copy to the manual ingest point `/awips2/edex/data/manual/` 
+1. Download an example grib1 file and rename to a `*.grib` extension, then copy to the manual ingest point `/awips2/data_store/ingest/` 
 
         wget http://www.unidata.ucar.edu/staff/mjames/14102318_nmm_d01.GrbF00600 -O wrf.grib
     
-        cp wrf.grib /awips2/edex/data/manual/
+        cp wrf.grib /awips2/data_store/ingest/
     
     Remember that the data distribution file (`/awips2/edex/data/utility/edex_static/base/distribution/grib.xml`) will match filename which have the `*.grib` extension.
 
@@ -200,13 +200,13 @@ save the file and restart EDEX for the changes to take effect.
 
     sudo service edex_camel restart
 
-Now copy the `wrf.grib` file *again* to **/awips2/edex/data/manual/**.  If everything is correct we will not see any persistence errors since the grid is now named **WRF** and not **GribModel:7:0:89**.
+Now copy the `wrf.grib` file *again* to **/awips2/data_store/ingest/**.  If everything is correct we will not see any persistence errors since the grid is now named **WRF** and not **GribModel:7:0:89**.
 
-    cp wrd.grib /awips2/edex/data/manual/
+    cp wrd.grib /awips2/data_store/ingest/
 
     edex log grib
 
-Now you can proceed to the next step: [Display a New Grid in D2D and NCP](../cave/new-grid.html).
+After you have confirmed that the grid was ingested with the given name, you can [edit the D2D product menus to display the new grid](../cave/d2d-edit-menus.html).
 
 # Troubleshooting Grib Ingest
 

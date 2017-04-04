@@ -24,5 +24,5 @@ subtitle: Data Types
     FNEXRAD ^rad/NEXRCOMP/(...)/(...)_(........)_(....)
             PIPE    -close -edex -log
             pngg2gini -vl logs/pngg2gini.log
-            /awips2/edex/data/manual/nexrcomp_\1_\4_\3_\2_(seq).rad
+            /awips2/data_store/ingest/nexrcomp_\1_\4_\3_\2_(seq).rad
     

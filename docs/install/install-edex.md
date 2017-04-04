@@ -150,7 +150,7 @@ The command `edex setup` attempts to add the domain name of your server.
 - `/awips2/edex/bin/setup.env` **should contain the fully-qualified domain name**, externally resolved, localhost will not work. 
 
         export AW_SITE_IDENTIFIER=BOU
-        export EDEX_SERVER=edex.westus.cloudapp.azure.com
+        export EDEX_SERVER=edex-cloud.unidata.ucar.edu
 
 - `/awips2/ldm/etc/ldmd.conf` contains the upstream server (default *idd.unidata.ucar.edu*, which requires you connect form a .edu domain). This file also contains the **edexBridge** hostname (default *localhost*). 
 
@@ -184,3 +184,4 @@ and
 * `/awips2/ldm/etc` - Location of **ldmd.conf** and **pqact.conf**
 * `/awips2/ldm/logs` - LDM logs.
 * `/awips2/data_store` - Raw data store.
+* `/awips2/data_store/ingest` - Manual data ingest endpoint.

@@ -1,11 +1,7 @@
-Polymer Documentation Theme 
-===========================
+AWIPS User Manual 
+=================
 
-This is a boilerplate documentation framework for Github Pages using Markdown.
-
-This project is based on [Polymer/docs](https://github.com/Polymer/docs) and uses [Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com) to generate static HTML in a folder called `_site`. The `_site` folder can be served locally for  development, and is desgined for easy publication to Github Pages.
-
-[See the demo](https://mjames-upc.github.io/polymer-docs/).
+This user manual is created from the documentation framework Polymer Docs ([https://github.com/mjames-upc/polymer-docs](github.com/mjames-upc/polymer-docs)), and uses [Jekyll](https://jekyllrb.com) and [Grunt](https://gruntjs.com) to generate static HTML documentation pages for Github Pages.
 
 # Installation
 

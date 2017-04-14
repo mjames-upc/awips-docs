@@ -5,9 +5,6 @@ title: Gridded Model Display
 subtitle: D2D User Guide
 ---
 
-{% include toc.html %}
-
-
 
 # MSLP and Precipitation
 

@@ -6,7 +6,6 @@ title: Linux Tools
 subtitle: EDEX Admin
 ---
 
-{% include toc.html %}
 
 
 ## Using Standard Linux Tools 

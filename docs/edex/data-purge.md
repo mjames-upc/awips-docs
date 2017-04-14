@@ -6,7 +6,6 @@ title: EDEX Data Purging
 ---
 
 
-{% include toc.html %}
 
 
 AWIPS uses a plugin-based purge strategy for HDF5 data, allowing the user to change the purge frequency for each plugin individually, and specific products for a particular plugin.

@@ -6,7 +6,6 @@ title: Default LDM feeds
 subtitle: EDEX Admin
 ---
 
-{% include toc.html %}
 
 
 # Default LDM Feeds for EDEX

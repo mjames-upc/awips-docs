@@ -1,10 +1,22 @@
+## Default Maps
+
+The first toolbar menu item is a dropdown menu for different geographic areas and map projections.  The efault view is always **CONUS**, which is a North Polar Steregraphic projection centered on the Continental United States.
+
+Default projections and areas available in the menu
+
+   * **N. Hemisphere** (North Polar Stereographic)
+   * **Regional** (for the selected localization site)
+   * **WFO** (for the selected localization site)
+   * **World Mercator**
+   * **World CED**
+   * **World Mollweide**
+   * and **Regional** Mercator projections for **Africa**, **Australia/NZ**, **South America**, **Europe**, **Alaska**, **Hawaii**, **Puerto Rico**, **Japan**, **Pacific Ocean**, and the north and south poles.
+
+![image](../images/mapscales.jpg)
+
 ---
-layout: default
-type: guide
-shortname: Docs
-title: CAVE Menus
-subtitle: Maps, Projections, and Bundles
----
+
+## New Map / New View
 
 **File > New Map**
 
@@ -16,7 +28,9 @@ This can also be done by **right-click** on any tab and selecting **New Editor**
 
 ![image](../images/Sd3qL6LJ55.gif)
 
-# Projections
+---
+
+## New Projection
 
 **File > New Projection**
 
@@ -24,7 +38,9 @@ Create a new map projection.
 
 ![image](../images/VANzMW2.png)
 
-# Bundles
+---
+
+## Saving / Loading Bundles
 
 **File > Save Bundle**
 
@@ -60,11 +76,9 @@ Load a map or product display from a path within the file directory of the works
 
 Save a map or product display to a path within the file directory of the workstation.
 
-# Import / Export
+---
 
-**File > Import**
-
-Import GIS Data, BCD File, GeoTIFF, LPI File, Shapefile, SPI File, or a D2D Display. The "GIS Data" option opens the GIS application, which provides the ability to import geospatial data from varying GIS data sources. The GIS application has been incorporated into CAVE for use with FX-Net.
+## Screenshots
 
 **File > Export > Image**
 
@@ -72,9 +86,9 @@ which captures a screenshot of the current view
 
 ![image](../images/UxmboZS.png)
 
-**File > Export > Print Screen**
+---
 
-will bring up the workstation print dialog.
+## KML
 
 **File > Export > KML**
 
@@ -98,9 +112,9 @@ exported.
 * **Show Background Tiles**: When selected, data (such as plot data) will display on top of black
 tiles when loaded in Google Earth.
 
+---
 
-
-# CAVE Import Data Formats
+## CAVE Import Formats
 
 CAVE supported the following geo-referenced data files. CAVE can import the following through formats through the **CAVE** -> **Import** menu.
 
@@ -118,7 +132,9 @@ CAVE supported the following geo-referenced data files. CAVE can import the foll
 
 ![image](../images/image_14.png)
 
-## CAVE Export Data Formats
+---
+
+## CAVE Export Formats
 
 CAVE can export to the following through the **CAVE** -> **Export** menu.
 

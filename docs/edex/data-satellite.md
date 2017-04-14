@@ -6,7 +6,6 @@ title: Satellite Data
 subtitle: Data Types
 ---
 
-{% include toc.html %}
 
 
 # Satellite Imagery

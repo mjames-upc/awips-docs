@@ -6,7 +6,6 @@ title: Data distribution files
 subtitle: EDEX Admin
 ---
 
-{% include toc.html %}
     
 EDEX alerts the appropriate decoding plug-ins of new data by use of XML files that describe data based on regular expressions.  If the WMO header, or file name, matches a regular expression listed in a distribution XML, then EDEX will put a message into the QPID queue for the decoder which indicates that a piece of data is available. If a piece of data does not match any distribution XML, EDEX will:
 

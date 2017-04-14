@@ -6,7 +6,6 @@ title: Radar Menu
 subtitle: D2D User Guide
 ---
 
-{% include toc.html %}
 
 # NEXRAD Radar Display
 

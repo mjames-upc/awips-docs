@@ -1,18 +1,12 @@
----
-layout: default
-title: National Centers Perspective (NCP)
----
-
-{% include toc.html %}
-
-# NCP Toolbar
+# The National Centers Perspective (NCP)
 
 The NCP toolbar includes two buttons to load **Data** and **Bundles**, respectively.  The toolbar also include a **Clear** button, **Zoom** and **Unzoom**,  and the **NSHARP** plugin.
  
 ![image](../images/ncp_image_6.png)
 
+---
 
-## Load a single data product
+## Loading Data
 
 1. Click the "**+Data**" button.
 
@@ -25,8 +19,9 @@ The NCP toolbar includes two buttons to load **Data** and **Bundles**, respectiv
 
 **Latest Available Data Time** or **Cycle Time** is underneath the Attributes column at bottom-right.
 
+---
 
-## Load a Bundle
+## Create a Bundle
 
 Open the Resource Manager by:
 
@@ -40,6 +35,8 @@ Open the Resource Manager by:
 
 ![image](../images/ncp_image_8.png)
 
+---
+
 ## Timeline
 
 A timeline is displayed for available data. Here, the user may choose the dominant resource, number of frames, time range, reference time, etc. for the products to be displayed.
@@ -47,6 +44,8 @@ A timeline is displayed for available data. Here, the user may choose the domina
 ![image](../images/ncp_image_9.png)
 
 Clicking "**Load**" will keep open the Resource Manager while the selected data layers are loaded to the map. ”**Load and Close**” will display data and close the Resource Manager.
+
+---
 
 ## Save a Bundle
 
@@ -64,6 +63,8 @@ After saving a Bundle, its a good idea to confirm that it loads correctly. Selec
 
 The "**Edit Bundle**" button is available to make any changes while loading.
 
+---
+
 ## Manage Bundles
 
 The third tab in the Resource Manager, titled **Manage Bundles** can be used to do just that: modify, create, and delete existing Bundle Groups.
@@ -76,23 +77,29 @@ A Bundle may be renamed by clicking the "**Rename Bundle**" button. Similarly, a
 
 Deleting an Bundle Group is a fairly straightforward action. First, click the "**Delete Bundle Group**" option on the top-left, then select the Bundle Group Group and Name to be deleted.
 
-# Manage Data
+![image](../images/image_25.png)
+
+---
+
+## Edit Data Sources
 
 ![image](../images/ncp_image_11.png)
-
-## Edit Resource
 
 Selection a Resource to edit allows you to update the number of frames, frame span, range and timeline form. The plugin name and grid name (**GDFILE**) can also be edited.
 
 ![image](../images/image_12.png)
 
-## Edit Attribute
+---
+
+## Edit Resource Attributes
 
 Using gridded data, selecting an Attribute to edit allows you to change the GEMPAK syntax used to define the resource.
 
 ![image](../images/image_13.png)
 
-# Add a Grid Resource in NCP
+---
+
+## Add a New Grid
 
 1. Click the "**Bundle**" button and then open the “**Manage Data**” tab.
 
@@ -132,9 +139,11 @@ Using gridded data, selecting an Attribute to edit allows you to change the GEMP
 
 ![image](../images/image_21.png)
 
-# Multi-Pane Display                                         1
+---
 
-Another feature of AWIPS II CAVE in the realm of data selection is the addition of a configurable multi-pane display. As seen in the figure below, selecting the "Multi-Pane" check box extends the GUI window and displays additional options.
+## Multi-Pane Display
+
+The NCP includes a configurable multi-pane display. As seen in the figure below, selecting the "Multi-Pane" check box extends the GUI window and displays additional options.
 
 ![image](../images/image_22.png)
 
@@ -156,9 +165,9 @@ Here are a few quick steps to creating a Multi-pane display in AWIPS II:
 
 4. Choose a product through the **Add** button (See Data Selection above)
 
-5. Select a different cell* in your multi-paned display in which you would like to display a product 
+5. Select a different cell in your multi-paned display in which you would like to display a product 
 
-*Note: the user will need to load a separate product from the Resource Manager for each pane in the "select pane" layout*
+	!!! note "the user will need to load a separate product from the Resource Manager for each pane in the **select pane** layout"
 
 6. Repeat step #4
 
@@ -166,7 +175,9 @@ Here are a few quick steps to creating a Multi-pane display in AWIPS II:
 
 8. Click "**Load**" and your multi-paned display will appear
 
-# Load Bundle
+---
+
+## Load Multiple Bundles
 
 The Load Bundle tab in the Resource Manager can be used to load Bundles previously created by the user:
 
@@ -179,24 +190,3 @@ Clicking "Load" or “Load and Close” at the bottom of this window will load t
 Multiple Bundles can be selected and loaded all at once by simply hold the **Ctl** key and multi-selecting Bundles from the central pane, and then clicking either of the Load buttons. If multiple Bundles are loaded at once, they will each be displayed in different tabs in the CAVE interface. The order/arrangement of the Bundles will be mimicked in the order of the tabs when displayed in CAVE. 
 
 Finally, the user may also edit an Bundle in this tab, simply by clicking the "**Edit**" button, and making desired changes in the GUI that pops up.
-
-# Manage Bundles
-
-The third tab in the Resource Manager, titled Manage Bundles can be used to do just that: modify, create, and delete existing Bundles and Groups.
-
-At the top left, there are 3 options: Modify Group, Create Group, and Delete Group. Starting with the first option, modifying an Group is relatively straightforward. The Group Name can be selected in the pull-down menus on the left-hand side of the window (see Figure 7 below). Any existing Bundles will appear in the central pane. The user can then change the order of the Bundles within the Group, by clicking the "**Move Up**" and “**Move Down**” buttons on the right.
-
- A user can add Bundles to an existing Group by clicking the "**Add Bundles**" button. A new Gui will pop up, allowing the user to select a Bundle that exists within a different Group or a current CAVE display. 
-
-An Bundle may be renamed by clicking the "**Rename Bundle**" button. Similarly, an Bundle may be removed from a specific Group by clicking the “**Remove Bundle**” button. NOTE: any changes made here must be saved by clicking the “**Save Group**” button on the left-hand side.
-
-As mentioned above, a new Group may also be created within this tab. First, select the "**Create Group**" option on the top-left. Next, type in a new Group name in the text box with the same name. The user can then add any Bundles to be placed within the new Group. Next, click “Create Group”. A pop up should appear, confirming creation of the new Group.
-
-Deleting a Group is a fairly straightforward action. First, click the "**Delete Group**" option on the top-left, then select the Group Name to be deleted. Then click the Delete Group button at the bottom-left. A pop up should appear, confirming deletion of the chosen Group.
-
-![image](../images/image_25.png)
-
-# Right-Click Edit Grid Attributes
-
-![image](../images/image_26.png)
-

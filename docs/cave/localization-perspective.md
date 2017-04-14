@@ -1,17 +1,27 @@
+
+## Localization Levels
+
+AWIPS uses a hierarchical system known as *Localization* to configure many aspects of EDEX and CAVE, such as available menu items, color maps, and derived parameters.  This system allows a user to override existing configurations and customize CAVE.  For example, a *User-level* localization file will supercede any similar file in a lower level (such as *Workstation* or *Site*).
+
+!!! note "There are six *levels of localization*, starting with the default **BASE**"
+
+	* **BASE** - default
+		* **Region** - a region may have many sites (generally unused)
+			* **Site** - a site may have many desks (required)
+				* **Desk** - a desk may have many workstations
+					* **Workstation** - a workstation may have many users
+						* **User** - highest level of localization, overrides all others
+
 ---
-layout: default
-type: guide
-shortname: Docs
-title: Localization Perspective
-subtitle: CAVE User Guide
----
 
-The localization perspective was developed to provide a user with an easy way to perform configuration of CAVE.  It is launched from the perspective button in the main CAVE display.  Making changes in localization is really an act of *overriding* files which exist at a lower level (BASE being the lowest). 
+## Localization Editor
+
+The Localization Perspective acts as file editor for the XML, Python, and text files which customize the look and feel of CAVE.  
 
 
-![image alt text](../images/image_1.png)
+Users may copy and add files to available directories at the *Workstation* and *User* levels.
 
-Once opened, the perspective allows the user to configure SITE and USER-level configuration files which are used to localize or customize the CAVE experience. Most of the site data configuration files that control the baseline localization are not accessible through this interface.  Examples of things that can be accessed through the perspective include (this list is not all-inclusive):
+Examples of things that can be accessed through the perspective include (this list is not all-inclusive):
 
 * NCP Predefined Areas, Color Maps and Style Rules
 
@@ -21,13 +31,9 @@ Once opened, the perspective allows the user to configure SITE and USER-level co
 
 * CAVE Map Overlays, Color Maps and Style Rules
 
-* AvnFPS Configuration
-
 * GFE Tools and Utilities
 
-* Hydro Apps_defaults
-
-* WarnGen Velocity Templates and Configuration Files
+![image alt text](../images/image_1.png)
 
 The left panel contains a directory heirarchy of CAVE files for D2D, GFE, and NCP, which can be copied and edited as *user* localization files.
 
@@ -37,15 +43,17 @@ There may be several versions of each file including **BASE**, **CONFIGURED** (G
 
 The **_File Editor_** view opens the selected configuration file in an appropriate editor.  For example, a Python file is opened in a Python editor, and an XML file is opened in an XML editor.
 
+--
 
-## Customize CAVE Menus
+## Customizing CAVE Menus
 
 Navigate to **CAVE** > **Menus** and select a submenu (e.g. **satellite**).  This directory lists all of the menu file contributions made by this data plugin.   Most data menu directories will have an `index.xml` file from which you can investigate the menu structure and made needed changes. 
 
 Selecting a file such as **index.xml** will show a sub-menu with a default localization level (typically **BASE** or **CONFIGURED**). Double-click this tab to open in the file editor (you may need to click **Source** at the bottom of the view to see the raw XML).  Right-click this tab and select **Copy To** > **User (awips)** and you will see the file localization versions update with the new copy. Select this file to edit, and override, the existing version.
 
+--
 
-## Add a new Predefined Area to NCP
+## Add new Predefined Area to NCP
 
 In the Localization Perspective, navigate to ‘**NCEP - Predefined Area Menus**’, double-click ‘**AreaMenus.xml**’, and then right-click ‘**BASE**’ and select ‘**Copy To - User**’.  You can also copy to **Desk** or **Workstation** localization.
 
@@ -87,8 +95,7 @@ Switch to the new Area to confirm.
 
 On your workstation you can find the new USER localization files in ~/caveData
 
-awips@edex:~/caveData> **find ./ -name CONUS_Mercator.xml**
+	find ~/caveData -name CONUS_Mercator.xml
 
-./etc/user/mjames/ncep/PredefinedAreas/CONUS_Mercator.xml
-
-./.localization/NCEP/Predefined Areas/CONUS_Mercator.xml
+	./etc/user/mjames/ncep/PredefinedAreas/CONUS_Mercator.xml
+	./.localization/NCEP/Predefined Areas/CONUS_Mercator.xml

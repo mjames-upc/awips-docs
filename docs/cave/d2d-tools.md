@@ -7,7 +7,6 @@ title: Display Tools
 
 These programs are accessible though the **Tools** dropdown menu.
 
-{% include toc.html %}
 
 ![image](../images/xiXbVEr.png)
 

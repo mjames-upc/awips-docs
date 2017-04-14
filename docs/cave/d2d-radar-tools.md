@@ -6,7 +6,6 @@ title: Radar Tools
 
 These programs are accessible though the **Tools** dropdown menu, and in individual site radar menus.
 
-{% include toc.html %}
 
 # Estimated Actual Velocity (EAV)
 

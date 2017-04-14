@@ -5,7 +5,6 @@ type: guide
 shortname: Docs
 ---
 
-{% include toc.html %}
 
 To open,
 

@@ -6,7 +6,6 @@ title: Unused Operational AWIPS Components
 
 An overview of components that are used operationally by the NWS but are made inactive in the Unidata release.  Some components are impractical for non-operational use, and some are unavailable for distribution outside of the NWS.
 
-{% include toc.html %}
 
 # Data Delivery
 

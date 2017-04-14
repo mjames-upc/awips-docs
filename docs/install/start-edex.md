@@ -3,7 +3,6 @@ layout: default
 title: EDEX Start and Stop
 ---
 
-{% include toc.html %}
 
 There are five EDEX service installed into `/etc/init.d/`, four of which run on boot:
 

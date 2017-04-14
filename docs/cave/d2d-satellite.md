@@ -6,7 +6,6 @@ title: Satellite Imagery
 subtitle: D2D User Guide
 ---
 
-{% include toc.html %}
 
 # VIIRS
 

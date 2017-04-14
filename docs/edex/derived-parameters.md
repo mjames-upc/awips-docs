@@ -6,7 +6,6 @@ layout: default
 type: guide 
 ---
 
-{% include toc.html %}
 
 
 AWIPS will calculate derived parameters using XML file definitions which refer to Python scripts where the actual calculations take place.   If and when there is an effort to verify calculated fields in Unidata Python packages, these should come in handy (along with the GEMPAK FORTRAN routines). 
